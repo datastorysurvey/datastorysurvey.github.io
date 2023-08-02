@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<!-- Created by pdf2htmlEX (https://github.com/coolwanglu/pdf2htmlex) -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta name="generator" content="pdf2htmlEX"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<style type="text/css">
+/*! 
+ * Base CSS for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE
+ */#sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}#page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}@media screen{#sidebar.opened+#page-container{left:250px}#page-container{bottom:0;right:0;overflow:auto}.loading-indicator{display:none}.loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}.loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}@media print{@page{margin:0}html{margin:0}body{margin:0;-webkit-print-color-adjust:exact}#sidebar{display:none}#page-container{width:auto;height:auto;overflow:visible;background-color:transparent}.d{display:none}}.pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}.pc.opened{display:block}.bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}.bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){.pf{overflow:visible;border:1px solid #fff}.pc{overflow:visible}}}.c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}.t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}.t:after{content:''}.t:before{content:'';display:inline-block}.t span{position:relative;unicode-bidi:bidi-override}._{display:inline-block;color:transparent;z-index:-1}::selection{background:rgba(127,255,255,0.4)}::-moz-selection{background:rgba(127,255,255,0.4)}.pi{display:none}.d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}.it{border:0;background-color:rgba(255,255,255,0.0)}.ir:hover{cursor:pointer}</style>
+<style type="text/css">
+/*! 
+ * Fancy styles for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE
+ */@keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes swing{0%{transform:rotate(0deg)}10%{transform:rotate(0deg)}90%{transform:rotate(720deg)}100%{transform:rotate(720deg)}}@-webkit-keyframes swing{0%{-webkit-transform:rotate(0deg)}10%{-webkit-transform:rotate(0deg)}90%{-webkit-transform:rotate(720deg)}100%{-webkit-transform:rotate(720deg)}}@media screen{#sidebar{background-color:#2f3236;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMNCA0Wk00IDBMMCA0WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+")}#outline{font-family:Georgia,Times,"Times New Roman",serif;font-size:13px;margin:2em 1em}#outline ul{padding:0}#outline li{list-style-type:none;margin:1em 0}#outline li>ul{margin-left:1em}#outline a,#outline a:visited,#outline a:hover,#outline a:active{line-height:1.2;color:#e8e8e8;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;display:block;overflow:hidden;outline:0}#outline a:hover{color:#0cf}#page-container{background-color:#9e9e9e;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOWU5ZTllIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=");-webkit-transition:left 500ms;transition:left 500ms}.pf{margin:13px auto;box-shadow:1px 1px 3px 1px #333;border-collapse:separate}.pc.opened{-webkit-animation:fadein 100ms;animation:fadein 100ms}.loading-indicator.active{-webkit-animation:swing 1.5s ease-in-out .01s infinite alternate none;animation:swing 1.5s ease-in-out .01s infinite alternate none}.checked{background:no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goQDSYgDiGofgAAAslJREFUOMvtlM9LFGEYx7/vvOPM6ywuuyPFihWFBUsdNnA6KLIh+QPx4KWExULdHQ/9A9EfUodYmATDYg/iRewQzklFWxcEBcGgEplDkDtI6sw4PzrIbrOuedBb9MALD7zv+3m+z4/3Bf7bZS2bzQIAcrmcMDExcTeXy10DAFVVAQDksgFUVZ1ljD3yfd+0LOuFpmnvVVW9GHhkZAQcxwkNDQ2FSCQyRMgJxnVdy7KstKZpn7nwha6urqqfTqfPBAJAuVymlNLXoigOhfd5nmeiKL5TVTV+lmIKwAOA7u5u6Lped2BsbOwjY6yf4zgQQkAIAcedaPR9H67r3uYBQFEUFItFtLe332lpaVkUBOHK3t5eRtf1DwAwODiIubk5DA8PM8bYW1EU+wEgCIJqsCAIQAiB7/u253k2BQDDMJBKpa4mEon5eDx+UxAESJL0uK2t7XosFlvSdf0QAEmlUnlRFJ9Waho2Qghc1/U9z3uWz+eX+Wr+lL6SZfleEAQIggA8z6OpqSknimIvYyybSCReMsZ6TislhCAIAti2Dc/zejVNWwCAavN8339j27YbTg0AGGM3WltbP4WhlRWq6Q/btrs1TVsYHx+vNgqKoqBUKn2NRqPFxsbGJzzP05puUlpt0ukyOI6z7zjOwNTU1OLo6CgmJyf/gA3DgKIoWF1d/cIY24/FYgOU0pp0z/Ityzo8Pj5OTk9PbwHA+vp6zWghDC+VSiuRSOQgGo32UErJ38CO42wdHR09LBQK3zKZDDY2NupmFmF4R0cHVlZWlmRZ/iVJUn9FeWWcCCE4ODjYtG27Z2Zm5juAOmgdGAB2d3cBADs7O8uSJN2SZfl+WKlpmpumaT6Yn58vn/fs6XmbhmHMNjc3tzDGFI7jYJrm5vb29sDa2trPC/9aiqJUy5pOp4f6+vqeJ5PJBAB0dnZe/t8NBajx/z37Df5OGX8d13xzAAAAAElFTkSuQmCC)}}</style>
+<style type="text/css">
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;src:url('data:application/font-woff;base64,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')format("woff");}.ff1{font-family:ff1;line-height:0.898000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;src:url('data:application/font-woff;base64,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')format("woff");}.ff2{font-family:ff2;line-height:0.906000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;src:url('data:application/font-woff;base64,d09GRgABAAAAAARwAA0AAAAABoAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABoAAAAcxIkD0EdERUYAAAFMAAAAHQAAACAAMwAET1MvMgAAAWwAAAA+AAAAVlWAYGNjbWFwAAABrAAAAEsAAAFKBHkGvWdhc3AAAAH4AAAACAAAAAj//wADZ2x5ZgAAAgAAAAB8AAAAfKOM2VFoZWFkAAACfAAAAC4AAAA2JF4ylGhoZWEAAAKsAAAAGAAAACQGzwOKaG10eAAAAsQAAAAYAAAAGAgnAFlsb2NhAAAC3AAAAA4AAAAOAGYAZm1heHAAAALsAAAAHgAAACAATQAVbmFtZQAAAwwAAAE7AAACZL9dCBBwb3N0AAAESAAAACYAAAA1oAp3KHicY2BgYGQAgjO2i86D6BrVDQ0wGgBE1QYeAAB4nGNgZGBg4ANiCQYQYGJgBEJWIGYB8xgABIEAOAAAAHicY2BkXM04gYGVgYGpi2kPAwNDD4RmfMBgyMgEFGVgZWaAAUYGJBCQ5prC4MCgwODE3AziQ0iIGgDFzAiSAAB4nGNgYGBmgGAZBkYGEHAB8hjBfBYGDSDNBqQZGZgYFBic/v8H8sH0/8f/D0HVAwEjGwOcw8gEJJgYUAEjxAr8gIWgisEMAA1/CToAAAAAAf//AAIAAgA4AAADSwODAAMABwAAMxEhEScRIRE4AxM4/V0Dg/x9OAMT/O0AAAUAIQAfAr4B2wADAAYACQAOABEAACUhESEDEQc3IQ0BJwcnBwMRNwK+/WMCnSHfyP3cAQwBH+4yLeoM2x8BvP59AU2etsm0sCoiqAFo/rCnAAAAeJxjYGQAA1bPqsPx/DZfGbiZX4D4D16Vi8FpRQYGZm/mZiCXg4EJJAoAKAIJzwAAeJxjYGRgYG5mYICT3gyMDKiADQAjgQFjA4MAOAAAAAABTQAAAAEAAANWACEAAAAAAAAAFAAUABQAFAA+AD4AAHicY2BkYGBgYxBiYGUAASYgZmQAiTmA+QwABRAAYwAAeJyVkL1uwjAUhY/5q6pKZeuI3BklBDMgslGqiIWBv+ypcAEJCDKBiD4Aj9BHYOwz9sR46lCJXFn+fHXu8XEAPOMHArfvFe+OBeq4OC7hAVfHZTRFzXEFdTFxXMWT+HJcY/9Kpag88vRmpwoWaODTcYn3fjsuI2aGG1fQEMpxFS/iw3GN/QsiGGhWjsSShMe1QsbaI0SLldvysbWaE1IccObJx4ITiIzWeWK09OQqy/Zhq5Xnub9NzCk9nLf+gpIZxuhjgCHmaGJkfWL6TK0PZuP+YDhvjhITp9MzGxP6LnHExiox0cvjJiFEnNkxWbEbKoq8ijkC7iHX//fcNAo9vrHLpTin0KFtusui1Cy1VH4gQ/knDzuq53U9FajO/W+JmdLwj61tdom2zYtYm8M63cm2H9zt+QsOr2PdAHicY2BiAIP/zQxGDNgAGxAzMjAxMjGoMjCzpedUFmQYAwBXYgRIAAA=')format("woff");}.ff3{font-family:ff3;line-height:0.899000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff4;src:url('data:application/font-woff;base64,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')format("woff");}.ff4{font-family:ff4;line-height:0.889000;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.m1{transform:none;-ms-transform:none;-webkit-transform:none;}
+.v0{vertical-align:0.000000px;}
+.lsf{letter-spacing:-0.402489px;}
+.ls9{letter-spacing:-0.016936px;}
+.lsa{letter-spacing:-0.015940px;}
+.ls11{letter-spacing:-0.013549px;}
+.lsc{letter-spacing:-0.011955px;}
+.ls7{letter-spacing:-0.010162px;}
+.ls3{letter-spacing:-0.007970px;}
+.ls8{letter-spacing:-0.006775px;}
+.ls2{letter-spacing:-0.003985px;}
+.ls5{letter-spacing:-0.003387px;}
+.ls0{letter-spacing:0.000000px;}
+.ls4{letter-spacing:0.003387px;}
+.lsd{letter-spacing:0.003985px;}
+.ls10{letter-spacing:0.004782px;}
+.ls1{letter-spacing:0.006376px;}
+.ls6{letter-spacing:0.006775px;}
+.lsb{letter-spacing:0.011955px;}
+.lse{letter-spacing:0.015940px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws0{word-spacing:0.000000px;}
+._2{margin-left:-4.941493px;}
+._4{margin-left:-2.764011px;}
+._0{margin-left:-1.268848px;}
+._12{width:1.175587px;}
+._10{width:4.917539px;}
+._b{width:6.435839px;}
+._6{width:7.802708px;}
+._a{width:8.890624px;}
+._3{width:9.998465px;}
+._8{width:11.094354px;}
+._7{width:12.122491px;}
+._9{width:13.188099px;}
+._d{width:14.747031px;}
+._1{width:15.851035px;}
+._e{width:17.009605px;}
+._11{width:18.373564px;}
+._13{width:19.970200px;}
+._14{width:21.300894px;}
+._5{width:25.129661px;}
+._f{width:286.955126px;}
+._c{width:1047.180953px;}
+.fc1{color:rgb(0,0,255);}
+.fc0{color:rgb(0,0,0);}
+.fs2{font-size:33.872799px;}
+.fs1{font-size:39.850399px;}
+.fs4{font-size:47.820400px;}
+.fs3{font-size:49.116000px;}
+.fs0{font-size:63.761200px;}
+.y26{bottom:37.482001px;}
+.y25{bottom:47.445165px;}
+.y24{bottom:57.408002px;}
+.ya1{bottom:73.345825px;}
+.y57{bottom:73.346873px;}
+.ya2{bottom:73.347000px;}
+.y23{bottom:80.322001px;}
+.ya0{bottom:85.306923px;}
+.y56{bottom:85.307970px;}
+.y22{bottom:90.285166px;}
+.y9f{bottom:97.259053px;}
+.y55{bottom:97.260101px;}
+.ycc{bottom:99.249260px;}
+.y21{bottom:100.248003px;}
+.y7b{bottom:109.210449px;}
+.y54{bottom:109.210830px;}
+.y9e{bottom:109.211184px;}
+.ycb{bottom:109.212097px;}
+.y20{bottom:110.211001px;}
+.yca{bottom:119.175163px;}
+.y7a{bottom:121.171547px;}
+.y53{bottom:121.171928px;}
+.y9d{bottom:121.172282px;}
+.y1f{bottom:126.150004px;}
+.yc9{bottom:129.138000px;}
+.y79{bottom:133.123678px;}
+.y52{bottom:133.124059px;}
+.y9c{bottom:133.124413px;}
+.y1e{bottom:136.113009px;}
+.yc8{bottom:139.101105px;}
+.y78{bottom:145.075808px;}
+.y51{bottom:145.076190px;}
+.y9b{bottom:145.076543px;}
+.y1d{bottom:146.076006px;}
+.yc7{bottom:149.063995px;}
+.yc6{bottom:149.064156px;}
+.y77{bottom:157.036906px;}
+.y50{bottom:157.037287px;}
+.y9a{bottom:157.037641px;}
+.yc5{bottom:159.026993px;}
+.y1c{bottom:162.015002px;}
+.y76{bottom:168.989037px;}
+.y4f{bottom:168.989418px;}
+.y99{bottom:168.989772px;}
+.y1b{bottom:171.977999px;}
+.y75{bottom:180.950134px;}
+.y4e{bottom:180.950515px;}
+.y98{bottom:180.950869px;}
+.y19{bottom:181.446108px;}
+.y1a{bottom:181.940996px;}
+.y18{bottom:181.941103px;}
+.yc4{bottom:184.929000px;}
+.y74{bottom:192.902265px;}
+.y4d{bottom:192.902646px;}
+.y97{bottom:192.903000px;}
+.y0{bottom:193.500000px;}
+.y96{bottom:204.853836px;}
+.y73{bottom:204.854396px;}
+.y4c{bottom:204.854777px;}
+.y17{bottom:211.046744px;}
+.y95{bottom:216.814934px;}
+.y72{bottom:216.815493px;}
+.y4b{bottom:216.815874px;}
+.y16{bottom:222.998875px;}
+.y94{bottom:228.767065px;}
+.yc3{bottom:228.767163px;}
+.y71{bottom:228.767624px;}
+.y49{bottom:228.767728px;}
+.y4a{bottom:228.768005px;}
+.y15{bottom:234.951006px;}
+.y93{bottom:240.719196px;}
+.yc2{bottom:240.719294px;}
+.y70{bottom:240.719755px;}
+.y48{bottom:240.719859px;}
+.y14{bottom:246.911171px;}
+.y92{bottom:252.680293px;}
+.yc1{bottom:252.680391px;}
+.y6f{bottom:252.680852px;}
+.y47{bottom:252.680956px;}
+.y13{bottom:258.863302px;}
+.y91{bottom:264.632424px;}
+.yc0{bottom:264.632522px;}
+.y6e{bottom:264.632983px;}
+.y46{bottom:264.633087px;}
+.y12{bottom:270.815432px;}
+.y45{bottom:276.583938px;}
+.y90{bottom:276.584555px;}
+.ybf{bottom:276.584653px;}
+.y6c{bottom:276.584758px;}
+.y6d{bottom:276.585114px;}
+.y11{bottom:282.776530px;}
+.y44{bottom:288.545036px;}
+.y8f{bottom:288.545652px;}
+.ybe{bottom:288.545750px;}
+.y6b{bottom:288.545855px;}
+.y10{bottom:294.728661px;}
+.y43{bottom:300.497167px;}
+.y8e{bottom:300.497783px;}
+.ybd{bottom:300.497881px;}
+.y6a{bottom:300.497986px;}
+.yf{bottom:306.680792px;}
+.y69{bottom:312.448603px;}
+.y42{bottom:312.449298px;}
+.y8d{bottom:312.449914px;}
+.ybc{bottom:312.450012px;}
+.ye{bottom:318.641889px;}
+.y68{bottom:324.409700px;}
+.y41{bottom:324.410395px;}
+.ybb{bottom:324.410740px;}
+.y8c{bottom:324.411011px;}
+.yd{bottom:330.594020px;}
+.y67{bottom:336.361831px;}
+.y40{bottom:336.362526px;}
+.y8b{bottom:336.362638px;}
+.yba{bottom:336.362871px;}
+.yc{bottom:342.555117px;}
+.y66{bottom:348.313962px;}
+.y3f{bottom:348.314657px;}
+.y8a{bottom:348.314769px;}
+.yb7{bottom:348.314903px;}
+.yb9{bottom:348.315002px;}
+.yb8{bottom:348.315094px;}
+.yb4{bottom:360.274881px;}
+.y65{bottom:360.275060px;}
+.y3e{bottom:360.275754px;}
+.y89{bottom:360.275866px;}
+.yb6{bottom:360.276000px;}
+.yb5{bottom:360.276093px;}
+.y86{bottom:372.226913px;}
+.yb3{bottom:372.227012px;}
+.y64{bottom:372.227191px;}
+.y3d{bottom:372.227885px;}
+.y88{bottom:372.227997px;}
+.y87{bottom:372.228088px;}
+.y85{bottom:384.179044px;}
+.yb2{bottom:384.179143px;}
+.y63{bottom:384.179321px;}
+.y3c{bottom:384.180016px;}
+.yb{bottom:384.395156px;}
+.y84{bottom:396.140142px;}
+.yb1{bottom:396.140240px;}
+.y62{bottom:396.140419px;}
+.y3b{bottom:396.141113px;}
+.ya{bottom:396.347287px;}
+.y83{bottom:408.092273px;}
+.yb0{bottom:408.092371px;}
+.y61{bottom:408.092550px;}
+.y3a{bottom:408.092784px;}
+.y9{bottom:408.299418px;}
+.y82{bottom:420.053370px;}
+.yaf{bottom:420.053469px;}
+.y60{bottom:420.053647px;}
+.y39{bottom:420.053881px;}
+.y8{bottom:420.260515px;}
+.y37{bottom:432.005041px;}
+.y81{bottom:432.005501px;}
+.yae{bottom:432.005600px;}
+.y5f{bottom:432.005778px;}
+.y38{bottom:432.006012px;}
+.y7{bottom:432.212646px;}
+.y36{bottom:443.957172px;}
+.y80{bottom:443.957632px;}
+.yad{bottom:443.957730px;}
+.y5e{bottom:443.957909px;}
+.y6{bottom:444.173743px;}
+.y35{bottom:455.918269px;}
+.y7f{bottom:455.918729px;}
+.yac{bottom:455.918828px;}
+.y5d{bottom:455.919006px;}
+.y5{bottom:456.125874px;}
+.y5c{bottom:467.869722px;}
+.y34{bottom:467.870400px;}
+.y7e{bottom:467.870860px;}
+.yab{bottom:467.870959px;}
+.y4{bottom:468.078005px;}
+.y5b{bottom:479.821853px;}
+.y33{bottom:479.822531px;}
+.y7d{bottom:479.822991px;}
+.yaa{bottom:479.823090px;}
+.yd9{bottom:489.786156px;}
+.y5a{bottom:491.782951px;}
+.y32{bottom:491.783628px;}
+.ya9{bottom:491.783861px;}
+.y7c{bottom:491.784088px;}
+.yd8{bottom:499.748993px;}
+.y59{bottom:503.735082px;}
+.ya7{bottom:503.735489px;}
+.y31{bottom:503.735759px;}
+.ya8{bottom:503.735992px;}
+.yd7{bottom:509.712006px;}
+.y58{bottom:515.687213px;}
+.ya6{bottom:515.687620px;}
+.y30{bottom:515.687890px;}
+.yd6{bottom:519.674988px;}
+.y2e{bottom:527.648310px;}
+.ya5{bottom:527.648717px;}
+.y2f{bottom:527.648987px;}
+.yd5{bottom:529.638123px;}
+.y2d{bottom:539.600441px;}
+.ya4{bottom:539.600848px;}
+.yd4{bottom:539.601074px;}
+.yd3{bottom:539.601189px;}
+.y3{bottom:544.992128px;}
+.yd2{bottom:549.564026px;}
+.y2c{bottom:551.552572px;}
+.ya3{bottom:551.552979px;}
+.yd1{bottom:559.526978px;}
+.y2b{bottom:563.513669px;}
+.yd0{bottom:569.490112px;}
+.y2a{bottom:575.465800px;}
+.ycf{bottom:579.453003px;}
+.y2{bottom:580.631474px;}
+.y29{bottom:587.417931px;}
+.yce{bottom:589.416016px;}
+.ycd{bottom:589.416191px;}
+.y1{bottom:598.569094px;}
+.y28{bottom:599.379028px;}
+.y27{bottom:623.831970px;}
+.h5{height:23.304486px;}
+.h8{height:23.439977px;}
+.h4{height:27.417075px;}
+.h3{height:27.576476px;}
+.h7{height:33.091717px;}
+.h2{height:44.122750px;}
+.h6{height:44.155284px;}
+.h1{height:416.500000px;}
+.h0{height:666.142000px;}
+.w1{width:332.500000px;}
+.w0{width:439.370000px;}
+.x0{left:53.500000px;}
+.x1{left:65.529000px;}
+.x7{left:79.325996px;}
+.x9{left:92.592003px;}
+.x2{left:97.092003px;}
+.x3{left:105.885002px;}
+.x10{left:108.459000px;}
+.x11{left:150.884995px;}
+.xd{left:192.546005px;}
+.xe{left:197.522995px;}
+.x12{left:209.511002px;}
+.xb{left:261.522003px;}
+.xf{left:279.683990px;}
+.x5{left:293.112000px;}
+.xa{left:295.649994px;}
+.xc{left:324.612000px;}
+.x4{left:372.528015px;}
+.x6{left:374.445007px;}
+.x8{left:379.421997px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.lsf{letter-spacing:-0.536652pt;}
+.ls9{letter-spacing:-0.022582pt;}
+.lsa{letter-spacing:-0.021254pt;}
+.ls11{letter-spacing:-0.018065pt;}
+.lsc{letter-spacing:-0.015940pt;}
+.ls7{letter-spacing:-0.013549pt;}
+.ls3{letter-spacing:-0.010627pt;}
+.ls8{letter-spacing:-0.009033pt;}
+.ls2{letter-spacing:-0.005313pt;}
+.ls5{letter-spacing:-0.004516pt;}
+.ls0{letter-spacing:0.000000pt;}
+.ls4{letter-spacing:0.004516pt;}
+.lsd{letter-spacing:0.005313pt;}
+.ls10{letter-spacing:0.006376pt;}
+.ls1{letter-spacing:0.008501pt;}
+.ls6{letter-spacing:0.009033pt;}
+.lsb{letter-spacing:0.015940pt;}
+.lse{letter-spacing:0.021254pt;}
+.ws0{word-spacing:0.000000pt;}
+._2{margin-left:-6.588658pt;}
+._4{margin-left:-3.685348pt;}
+._0{margin-left:-1.691797pt;}
+._12{width:1.567449pt;}
+._10{width:6.556719pt;}
+._b{width:8.581119pt;}
+._6{width:10.403611pt;}
+._a{width:11.854166pt;}
+._3{width:13.331286pt;}
+._8{width:14.792472pt;}
+._7{width:16.163321pt;}
+._9{width:17.584132pt;}
+._d{width:19.662707pt;}
+._1{width:21.134713pt;}
+._e{width:22.679473pt;}
+._11{width:24.498086pt;}
+._13{width:26.626933pt;}
+._14{width:28.401192pt;}
+._5{width:33.506214pt;}
+._f{width:382.606834pt;}
+._c{width:1396.241270pt;}
+.fs2{font-size:45.163732pt;}
+.fs1{font-size:53.133865pt;}
+.fs4{font-size:63.760533pt;}
+.fs3{font-size:65.488000pt;}
+.fs0{font-size:85.014933pt;}
+.y26{bottom:49.976001pt;}
+.y25{bottom:63.260220pt;}
+.y24{bottom:76.544003pt;}
+.ya1{bottom:97.794434pt;}
+.y57{bottom:97.795831pt;}
+.ya2{bottom:97.796000pt;}
+.y23{bottom:107.096001pt;}
+.ya0{bottom:113.742563pt;}
+.y56{bottom:113.743961pt;}
+.y22{bottom:120.380222pt;}
+.y9f{bottom:129.678738pt;}
+.y55{bottom:129.680135pt;}
+.ycc{bottom:132.332347pt;}
+.y21{bottom:133.664004pt;}
+.y7b{bottom:145.613932pt;}
+.y54{bottom:145.614441pt;}
+.y9e{bottom:145.614913pt;}
+.ycb{bottom:145.616129pt;}
+.y20{bottom:146.948001pt;}
+.yca{bottom:158.900217pt;}
+.y7a{bottom:161.562062pt;}
+.y53{bottom:161.562570pt;}
+.y9d{bottom:161.563042pt;}
+.y1f{bottom:168.200005pt;}
+.yc9{bottom:172.184000pt;}
+.y79{bottom:177.498237pt;}
+.y52{bottom:177.498745pt;}
+.y9c{bottom:177.499217pt;}
+.y1e{bottom:181.484012pt;}
+.yc8{bottom:185.468140pt;}
+.y78{bottom:193.434411pt;}
+.y51{bottom:193.434919pt;}
+.y9b{bottom:193.435391pt;}
+.y1d{bottom:194.768008pt;}
+.yc7{bottom:198.751993pt;}
+.yc6{bottom:198.752208pt;}
+.y77{bottom:209.382541pt;}
+.y50{bottom:209.383049pt;}
+.y9a{bottom:209.383521pt;}
+.yc5{bottom:212.035991pt;}
+.y1c{bottom:216.020002pt;}
+.y76{bottom:225.318716pt;}
+.y4f{bottom:225.319224pt;}
+.y99{bottom:225.319696pt;}
+.y1b{bottom:229.303999pt;}
+.y75{bottom:241.266845pt;}
+.y4e{bottom:241.267353pt;}
+.y98{bottom:241.267825pt;}
+.y19{bottom:241.928144pt;}
+.y1a{bottom:242.587995pt;}
+.y18{bottom:242.588138pt;}
+.yc4{bottom:246.572000pt;}
+.y74{bottom:257.203020pt;}
+.y4d{bottom:257.203528pt;}
+.y97{bottom:257.204000pt;}
+.y0{bottom:258.000000pt;}
+.y96{bottom:273.138449pt;}
+.y73{bottom:273.139194pt;}
+.y4c{bottom:273.139702pt;}
+.y17{bottom:281.395659pt;}
+.y95{bottom:289.086578pt;}
+.y72{bottom:289.087324pt;}
+.y4b{bottom:289.087832pt;}
+.y16{bottom:297.331833pt;}
+.y94{bottom:305.022753pt;}
+.yc3{bottom:305.022884pt;}
+.y71{bottom:305.023499pt;}
+.y49{bottom:305.023637pt;}
+.y4a{bottom:305.024007pt;}
+.y15{bottom:313.268008pt;}
+.y93{bottom:320.958927pt;}
+.yc2{bottom:320.959058pt;}
+.y70{bottom:320.959673pt;}
+.y48{bottom:320.959812pt;}
+.y14{bottom:329.214894pt;}
+.y92{bottom:336.907057pt;}
+.yc1{bottom:336.907188pt;}
+.y6f{bottom:336.907803pt;}
+.y47{bottom:336.907941pt;}
+.y13{bottom:345.151069pt;}
+.y91{bottom:352.843232pt;}
+.yc0{bottom:352.843363pt;}
+.y6e{bottom:352.843977pt;}
+.y46{bottom:352.844116pt;}
+.y12{bottom:361.087243pt;}
+.y45{bottom:368.778585pt;}
+.y90{bottom:368.779406pt;}
+.ybf{bottom:368.779537pt;}
+.y6c{bottom:368.779677pt;}
+.y6d{bottom:368.780152pt;}
+.y11{bottom:377.035373pt;}
+.y44{bottom:384.726714pt;}
+.y8f{bottom:384.727536pt;}
+.ybe{bottom:384.727667pt;}
+.y6b{bottom:384.727807pt;}
+.y10{bottom:392.971548pt;}
+.y43{bottom:400.662889pt;}
+.y8e{bottom:400.663710pt;}
+.ybd{bottom:400.663841pt;}
+.y6a{bottom:400.663981pt;}
+.yf{bottom:408.907722pt;}
+.y69{bottom:416.598138pt;}
+.y42{bottom:416.599063pt;}
+.y8d{bottom:416.599885pt;}
+.ybc{bottom:416.600016pt;}
+.ye{bottom:424.855852pt;}
+.y68{bottom:432.546267pt;}
+.y41{bottom:432.547193pt;}
+.ybb{bottom:432.547654pt;}
+.y8c{bottom:432.548015pt;}
+.yd{bottom:440.792026pt;}
+.y67{bottom:448.482442pt;}
+.y40{bottom:448.483368pt;}
+.y8b{bottom:448.483517pt;}
+.yba{bottom:448.483828pt;}
+.yc{bottom:456.740156pt;}
+.y66{bottom:464.418616pt;}
+.y3f{bottom:464.419542pt;}
+.y8a{bottom:464.419692pt;}
+.yb7{bottom:464.419870pt;}
+.yb9{bottom:464.420003pt;}
+.yb8{bottom:464.420125pt;}
+.yb4{bottom:480.366508pt;}
+.y65{bottom:480.366746pt;}
+.y3e{bottom:480.367672pt;}
+.y89{bottom:480.367821pt;}
+.yb6{bottom:480.368000pt;}
+.yb5{bottom:480.368124pt;}
+.y86{bottom:496.302551pt;}
+.yb3{bottom:496.302683pt;}
+.y64{bottom:496.302921pt;}
+.y3d{bottom:496.303846pt;}
+.y88{bottom:496.303996pt;}
+.y87{bottom:496.304117pt;}
+.y85{bottom:512.238726pt;}
+.yb2{bottom:512.238858pt;}
+.y63{bottom:512.239095pt;}
+.y3c{bottom:512.240021pt;}
+.yb{bottom:512.526875pt;}
+.y84{bottom:528.186855pt;}
+.yb1{bottom:528.186987pt;}
+.y62{bottom:528.187225pt;}
+.y3b{bottom:528.188151pt;}
+.ya{bottom:528.463049pt;}
+.y83{bottom:544.123030pt;}
+.yb0{bottom:544.123162pt;}
+.y61{bottom:544.123399pt;}
+.y3a{bottom:544.123712pt;}
+.y9{bottom:544.399224pt;}
+.y82{bottom:560.071160pt;}
+.yaf{bottom:560.071292pt;}
+.y60{bottom:560.071529pt;}
+.y39{bottom:560.071841pt;}
+.y8{bottom:560.347353pt;}
+.y37{bottom:576.006721pt;}
+.y81{bottom:576.007334pt;}
+.yae{bottom:576.007466pt;}
+.y5f{bottom:576.007704pt;}
+.y38{bottom:576.008016pt;}
+.y7{bottom:576.283528pt;}
+.y36{bottom:591.942895pt;}
+.y80{bottom:591.943509pt;}
+.yad{bottom:591.943641pt;}
+.y5e{bottom:591.943878pt;}
+.y6{bottom:592.231658pt;}
+.y35{bottom:607.891025pt;}
+.y7f{bottom:607.891639pt;}
+.yac{bottom:607.891770pt;}
+.y5d{bottom:607.892008pt;}
+.y5{bottom:608.167832pt;}
+.y5c{bottom:623.826297pt;}
+.y34{bottom:623.827200pt;}
+.y7e{bottom:623.827813pt;}
+.yab{bottom:623.827945pt;}
+.y4{bottom:624.104007pt;}
+.y5b{bottom:639.762471pt;}
+.y33{bottom:639.763374pt;}
+.y7d{bottom:639.763988pt;}
+.yaa{bottom:639.764119pt;}
+.yd9{bottom:653.048208pt;}
+.y5a{bottom:655.710601pt;}
+.y32{bottom:655.711504pt;}
+.ya9{bottom:655.711815pt;}
+.y7c{bottom:655.712117pt;}
+.yd8{bottom:666.331991pt;}
+.y59{bottom:671.646775pt;}
+.ya7{bottom:671.647319pt;}
+.y31{bottom:671.647678pt;}
+.ya8{bottom:671.647989pt;}
+.yd7{bottom:679.616008pt;}
+.y58{bottom:687.582950pt;}
+.ya6{bottom:687.583493pt;}
+.y30{bottom:687.583853pt;}
+.yd6{bottom:692.899984pt;}
+.y2e{bottom:703.531080pt;}
+.ya5{bottom:703.531623pt;}
+.y2f{bottom:703.531983pt;}
+.yd5{bottom:706.184164pt;}
+.y2d{bottom:719.467254pt;}
+.ya4{bottom:719.467797pt;}
+.yd4{bottom:719.468099pt;}
+.yd3{bottom:719.468252pt;}
+.y3{bottom:726.656171pt;}
+.yd2{bottom:732.752035pt;}
+.y2c{bottom:735.403429pt;}
+.ya3{bottom:735.403972pt;}
+.yd1{bottom:746.035971pt;}
+.y2b{bottom:751.351559pt;}
+.yd0{bottom:759.320149pt;}
+.y2a{bottom:767.287733pt;}
+.ycf{bottom:772.604004pt;}
+.y2{bottom:774.175299pt;}
+.y29{bottom:783.223908pt;}
+.yce{bottom:785.888021pt;}
+.ycd{bottom:785.888255pt;}
+.y1{bottom:798.092125pt;}
+.y28{bottom:799.172037pt;}
+.y27{bottom:831.775960pt;}
+.h5{height:31.072648pt;}
+.h8{height:31.253302pt;}
+.h4{height:36.556099pt;}
+.h3{height:36.768635pt;}
+.h7{height:44.122289pt;}
+.h2{height:58.830334pt;}
+.h6{height:58.873712pt;}
+.h1{height:555.333333pt;}
+.h0{height:888.189333pt;}
+.w1{width:443.333333pt;}
+.w0{width:585.826667pt;}
+.x0{left:71.333333pt;}
+.x1{left:87.371999pt;}
+.x7{left:105.767995pt;}
+.x9{left:123.456004pt;}
+.x2{left:129.456004pt;}
+.x3{left:141.180003pt;}
+.x10{left:144.612000pt;}
+.x11{left:201.179993pt;}
+.xd{left:256.728007pt;}
+.xe{left:263.363993pt;}
+.x12{left:279.348003pt;}
+.xb{left:348.696004pt;}
+.xf{left:372.911987pt;}
+.x5{left:390.815999pt;}
+.xa{left:394.199992pt;}
+.xc{left:432.815999pt;}
+.x4{left:496.704019pt;}
+.x6{left:499.260009pt;}
+.x8{left:505.895996pt;}
+}
+</style>
+<script>
+/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+/* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
+/* Copyright 2012 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* globals VBArray, PDFJS */
+
+'use strict';
+
+// Initializing PDFJS global object here, it case if we need to change/disable
+// some PDF.js features, e.g. range requests
+if (typeof PDFJS === 'undefined') {
+  (typeof window !== 'undefined' ? window : this).PDFJS = {};
+}
+
+// Checking if the typed arrays are supported
+// Support: iOS<6.0 (subarray), IE<10, Android<4.0
+(function checkTypedArrayCompatibility() {
+  if (typeof Uint8Array !== 'undefined') {
+    // Support: iOS<6.0
+    if (typeof Uint8Array.prototype.subarray === 'undefined') {
+        Uint8Array.prototype.subarray = function subarray(start, end) {
+          return new Uint8Array(this.slice(start, end));
+        };
+        Float32Array.prototype.subarray = function subarray(start, end) {
+          return new Float32Array(this.slice(start, end));
+        };
+    }
+
+    // Support: Android<4.1
+    if (typeof Float64Array === 'undefined') {
+      window.Float64Array = Float32Array;
+    }
+    return;
+  }
+
+  function subarray(start, end) {
+    return new TypedArray(this.slice(start, end));
+  }
+
+  function setArrayOffset(array, offset) {
+    if (arguments.length < 2) {
+      offset = 0;
+    }
+    for (var i = 0, n = array.length; i < n; ++i, ++offset) {
+      this[offset] = array[i] & 0xFF;
+    }
+  }
+
+  function TypedArray(arg1) {
+    var result, i, n;
+    if (typeof arg1 === 'number') {
+      result = [];
+      for (i = 0; i < arg1; ++i) {
+        result[i] = 0;
+      }
+    } else if ('slice' in arg1) {
+      result = arg1.slice(0);
+    } else {
+      result = [];
+      for (i = 0, n = arg1.length; i < n; ++i) {
+        result[i] = arg1[i];
+      }
+    }
+
+    result.subarray = subarray;
+    result.buffer = result;
+    result.byteLength = result.length;
+    result.set = setArrayOffset;
+
+    if (typeof arg1 === 'object' && arg1.buffer) {
+      result.buffer = arg1.buffer;
+    }
+    return result;
+  }
+
+  window.Uint8Array = TypedArray;
+  window.Int8Array = TypedArray;
+
+  // we don't need support for set, byteLength for 32-bit array
+  // so we can use the TypedArray as well
+  window.Uint32Array = TypedArray;
+  window.Int32Array = TypedArray;
+  window.Uint16Array = TypedArray;
+  window.Float32Array = TypedArray;
+  window.Float64Array = TypedArray;
+})();
+
+// URL = URL || webkitURL
+// Support: Safari<7, Android 4.2+
+(function normalizeURLObject() {
+  if (!window.URL) {
+    window.URL = window.webkitURL;
+  }
+})();
+
+// Object.defineProperty()?
+// Support: Android<4.0, Safari<5.1
+(function checkObjectDefinePropertyCompatibility() {
+  if (typeof Object.defineProperty !== 'undefined') {
+    var definePropertyPossible = true;
+    try {
+      // some browsers (e.g. safari) cannot use defineProperty() on DOM objects
+      // and thus the native version is not sufficient
+      Object.defineProperty(new Image(), 'id', { value: 'test' });
+      // ... another test for android gb browser for non-DOM objects
+      var Test = function Test() {};
+      Test.prototype = { get id() { } };
+      Object.defineProperty(new Test(), 'id',
+        { value: '', configurable: true, enumerable: true, writable: false });
+    } catch (e) {
+      definePropertyPossible = false;
+    }
+    if (definePropertyPossible) {
+      return;
+    }
+  }
+
+  Object.defineProperty = function objectDefineProperty(obj, name, def) {
+    delete obj[name];
+    if ('get' in def) {
+      obj.__defineGetter__(name, def['get']);
+    }
+    if ('set' in def) {
+      obj.__defineSetter__(name, def['set']);
+    }
+    if ('value' in def) {
+      obj.__defineSetter__(name, function objectDefinePropertySetter(value) {
+        this.__defineGetter__(name, function objectDefinePropertyGetter() {
+          return value;
+        });
+        return value;
+      });
+      obj[name] = def.value;
+    }
+  };
+})();
+
+
+// No XMLHttpRequest#response?
+// Support: IE<11, Android <4.0
+(function checkXMLHttpRequestResponseCompatibility() {
+  var xhrPrototype = XMLHttpRequest.prototype;
+  var xhr = new XMLHttpRequest();
+  if (!('overrideMimeType' in xhr)) {
+    // IE10 might have response, but not overrideMimeType
+    // Support: IE10
+    Object.defineProperty(xhrPrototype, 'overrideMimeType', {
+      value: function xmlHttpRequestOverrideMimeType(mimeType) {}
+    });
+  }
+  if ('responseType' in xhr) {
+    return;
+  }
+
+  // The worker will be using XHR, so we can save time and disable worker.
+  PDFJS.disableWorker = true;
+
+  Object.defineProperty(xhrPrototype, 'responseType', {
+    get: function xmlHttpRequestGetResponseType() {
+      return this._responseType || 'text';
+    },
+    set: function xmlHttpRequestSetResponseType(value) {
+      if (value === 'text' || value === 'arraybuffer') {
+        this._responseType = value;
+        if (value === 'arraybuffer' &&
+            typeof this.overrideMimeType === 'function') {
+          this.overrideMimeType('text/plain; charset=x-user-defined');
+        }
+      }
+    }
+  });
+
+  // Support: IE9
+  if (typeof VBArray !== 'undefined') {
+    Object.defineProperty(xhrPrototype, 'response', {
+      get: function xmlHttpRequestResponseGet() {
+        if (this.responseType === 'arraybuffer') {
+          return new Uint8Array(new VBArray(this.responseBody).toArray());
+        } else {
+          return this.responseText;
+        }
+      }
+    });
+    return;
+  }
+
+  Object.defineProperty(xhrPrototype, 'response', {
+    get: function xmlHttpRequestResponseGet() {
+      if (this.responseType !== 'arraybuffer') {
+        return this.responseText;
+      }
+      var text = this.responseText;
+      var i, n = text.length;
+      var result = new Uint8Array(n);
+      for (i = 0; i < n; ++i) {
+        result[i] = text.charCodeAt(i) & 0xFF;
+      }
+      return result.buffer;
+    }
+  });
+})();
+
+// window.btoa (base64 encode function) ?
+// Support: IE<10
+(function checkWindowBtoaCompatibility() {
+  if ('btoa' in window) {
+    return;
+  }
+
+  var digits =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+  window.btoa = function windowBtoa(chars) {
+    var buffer = '';
+    var i, n;
+    for (i = 0, n = chars.length; i < n; i += 3) {
+      var b1 = chars.charCodeAt(i) & 0xFF;
+      var b2 = chars.charCodeAt(i + 1) & 0xFF;
+      var b3 = chars.charCodeAt(i + 2) & 0xFF;
+      var d1 = b1 >> 2, d2 = ((b1 & 3) << 4) | (b2 >> 4);
+      var d3 = i + 1 < n ? ((b2 & 0xF) << 2) | (b3 >> 6) : 64;
+      var d4 = i + 2 < n ? (b3 & 0x3F) : 64;
+      buffer += (digits.charAt(d1) + digits.charAt(d2) +
+                 digits.charAt(d3) + digits.charAt(d4));
+    }
+    return buffer;
+  };
+})();
+
+// window.atob (base64 encode function)?
+// Support: IE<10
+(function checkWindowAtobCompatibility() {
+  if ('atob' in window) {
+    return;
+  }
+
+  // https://github.com/davidchambers/Base64.js
+  var digits =
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+  window.atob = function (input) {
+    input = input.replace(/=+$/, '');
+    if (input.length % 4 === 1) {
+      throw new Error('bad atob input');
+    }
+    for (
+      // initialize result and counters
+      var bc = 0, bs, buffer, idx = 0, output = '';
+      // get next character
+      buffer = input.charAt(idx++);
+      // character found in table?
+      // initialize bit storage and add its ascii value
+      ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
+        // and if not first of each 4 characters,
+        // convert the first 8 bits to one ascii character
+        bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
+    ) {
+      // try to find character in table (0-63, not found => -1)
+      buffer = digits.indexOf(buffer);
+    }
+    return output;
+  };
+})();
+
+// Function.prototype.bind?
+// Support: Android<4.0, iOS<6.0
+(function checkFunctionPrototypeBindCompatibility() {
+  if (typeof Function.prototype.bind !== 'undefined') {
+    return;
+  }
+
+  Function.prototype.bind = function functionPrototypeBind(obj) {
+    var fn = this, headArgs = Array.prototype.slice.call(arguments, 1);
+    var bound = function functionPrototypeBindBound() {
+      var args = headArgs.concat(Array.prototype.slice.call(arguments));
+      return fn.apply(obj, args);
+    };
+    return bound;
+  };
+})();
+
+// HTMLElement dataset property
+// Support: IE<11, Safari<5.1, Android<4.0
+(function checkDatasetProperty() {
+  var div = document.createElement('div');
+  if ('dataset' in div) {
+    return; // dataset property exists
+  }
+
+  Object.defineProperty(HTMLElement.prototype, 'dataset', {
+    get: function() {
+      if (this._dataset) {
+        return this._dataset;
+      }
+
+      var dataset = {};
+      for (var j = 0, jj = this.attributes.length; j < jj; j++) {
+        var attribute = this.attributes[j];
+        if (attribute.name.substring(0, 5) !== 'data-') {
+          continue;
+        }
+        var key = attribute.name.substring(5).replace(/\-([a-z])/g,
+          function(all, ch) {
+            return ch.toUpperCase();
+          });
+        dataset[key] = attribute.value;
+      }
+
+      Object.defineProperty(this, '_dataset', {
+        value: dataset,
+        writable: false,
+        enumerable: false
+      });
+      return dataset;
+    },
+    enumerable: true
+  });
+})();
+
+// HTMLElement classList property
+// Support: IE<10, Android<4.0, iOS<5.0
+(function checkClassListProperty() {
+  var div = document.createElement('div');
+  if ('classList' in div) {
+    return; // classList property exists
+  }
+
+  function changeList(element, itemName, add, remove) {
+    var s = element.className || '';
+    var list = s.split(/\s+/g);
+    if (list[0] === '') {
+      list.shift();
+    }
+    var index = list.indexOf(itemName);
+    if (index < 0 && add) {
+      list.push(itemName);
+    }
+    if (index >= 0 && remove) {
+      list.splice(index, 1);
+    }
+    element.className = list.join(' ');
+    return (index >= 0);
+  }
+
+  var classListPrototype = {
+    add: function(name) {
+      changeList(this.element, name, true, false);
+    },
+    contains: function(name) {
+      return changeList(this.element, name, false, false);
+    },
+    remove: function(name) {
+      changeList(this.element, name, false, true);
+    },
+    toggle: function(name) {
+      changeList(this.element, name, true, true);
+    }
+  };
+
+  Object.defineProperty(HTMLElement.prototype, 'classList', {
+    get: function() {
+      if (this._classList) {
+        return this._classList;
+      }
+
+      var classList = Object.create(classListPrototype, {
+        element: {
+          value: this,
+          writable: false,
+          enumerable: true
+        }
+      });
+      Object.defineProperty(this, '_classList', {
+        value: classList,
+        writable: false,
+        enumerable: false
+      });
+      return classList;
+    },
+    enumerable: true
+  });
+})();
+
+// Check console compatibility
+// In older IE versions the console object is not available
+// unless console is open.
+// Support: IE<10
+(function checkConsoleCompatibility() {
+  if (!('console' in window)) {
+    window.console = {
+      log: function() {},
+      error: function() {},
+      warn: function() {}
+    };
+  } else if (!('bind' in console.log)) {
+    // native functions in IE9 might not have bind
+    console.log = (function(fn) {
+      return function(msg) { return fn(msg); };
+    })(console.log);
+    console.error = (function(fn) {
+      return function(msg) { return fn(msg); };
+    })(console.error);
+    console.warn = (function(fn) {
+      return function(msg) { return fn(msg); };
+    })(console.warn);
+  }
+})();
+
+// Check onclick compatibility in Opera
+// Support: Opera<15
+(function checkOnClickCompatibility() {
+  // workaround for reported Opera bug DSK-354448:
+  // onclick fires on disabled buttons with opaque content
+  function ignoreIfTargetDisabled(event) {
+    if (isDisabled(event.target)) {
+      event.stopPropagation();
+    }
+  }
+  function isDisabled(node) {
+    return node.disabled || (node.parentNode && isDisabled(node.parentNode));
+  }
+  if (navigator.userAgent.indexOf('Opera') !== -1) {
+    // use browser detection since we cannot feature-check this bug
+    document.addEventListener('click', ignoreIfTargetDisabled, true);
+  }
+})();
+
+// Checks if possible to use URL.createObjectURL()
+// Support: IE
+(function checkOnBlobSupport() {
+  // sometimes IE loosing the data created with createObjectURL(), see #3977
+  if (navigator.userAgent.indexOf('Trident') >= 0) {
+    PDFJS.disableCreateObjectURL = true;
+  }
+})();
+
+// Checks if navigator.language is supported
+(function checkNavigatorLanguage() {
+  if ('language' in navigator) {
+    return;
+  }
+  PDFJS.locale = navigator.userLanguage || 'en-US';
+})();
+
+(function checkRangeRequests() {
+  // Safari has issues with cached range requests see:
+  // https://github.com/mozilla/pdf.js/issues/3260
+  // Last tested with version 6.0.4.
+  // Support: Safari 6.0+
+  var isSafari = Object.prototype.toString.call(
+                  window.HTMLElement).indexOf('Constructor') > 0;
+
+  // Older versions of Android (pre 3.0) has issues with range requests, see:
+  // https://github.com/mozilla/pdf.js/issues/3381.
+  // Make sure that we only match webkit-based Android browsers,
+  // since Firefox/Fennec works as expected.
+  // Support: Android<3.0
+  var regex = /Android\s[0-2][^\d]/;
+  var isOldAndroid = regex.test(navigator.userAgent);
+
+  // Range requests are broken in Chrome 39 and 40, https://crbug.com/442318
+  var isChromeWithRangeBug = /Chrome\/(39|40)\./.test(navigator.userAgent);
+
+  if (isSafari || isOldAndroid || isChromeWithRangeBug) {
+    PDFJS.disableRange = true;
+    PDFJS.disableStream = true;
+  }
+})();
+
+// Check if the browser supports manipulation of the history.
+// Support: IE<10, Android<4.2
+(function checkHistoryManipulation() {
+  // Android 2.x has so buggy pushState support that it was removed in
+  // Android 3.0 and restored as late as in Android 4.2.
+  // Support: Android 2.x
+  if (!history.pushState || navigator.userAgent.indexOf('Android 2.') >= 0) {
+    PDFJS.disableHistory = true;
+  }
+})();
+
+// Support: IE<11, Chrome<21, Android<4.4, Safari<6
+(function checkSetPresenceInImageData() {
+  // IE < 11 will use window.CanvasPixelArray which lacks set function.
+  if (window.CanvasPixelArray) {
+    if (typeof window.CanvasPixelArray.prototype.set !== 'function') {
+      window.CanvasPixelArray.prototype.set = function(arr) {
+        for (var i = 0, ii = this.length; i < ii; i++) {
+          this[i] = arr[i];
+        }
+      };
+    }
+  } else {
+    // Old Chrome and Android use an inaccessible CanvasPixelArray prototype.
+    // Because we cannot feature detect it, we rely on user agent parsing.
+    var polyfill = false, versionMatch;
+    if (navigator.userAgent.indexOf('Chrom') >= 0) {
+      versionMatch = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+      // Chrome < 21 lacks the set function.
+      polyfill = versionMatch && parseInt(versionMatch[2]) < 21;
+    } else if (navigator.userAgent.indexOf('Android') >= 0) {
+      // Android < 4.4 lacks the set function.
+      // Android >= 4.4 will contain Chrome in the user agent,
+      // thus pass the Chrome check above and not reach this block.
+      polyfill = /Android\s[0-4][^\d]/g.test(navigator.userAgent);
+    } else if (navigator.userAgent.indexOf('Safari') >= 0) {
+      versionMatch = navigator.userAgent.
+        match(/Version\/([0-9]+)\.([0-9]+)\.([0-9]+) Safari\//);
+      // Safari < 6 lacks the set function.
+      polyfill = versionMatch && parseInt(versionMatch[1]) < 6;
+    }
+
+    if (polyfill) {
+      var contextPrototype = window.CanvasRenderingContext2D.prototype;
+      contextPrototype._createImageData = contextPrototype.createImageData;
+      contextPrototype.createImageData = function(w, h) {
+        var imageData = this._createImageData(w, h);
+        imageData.data.set = function(arr) {
+          for (var i = 0, ii = this.length; i < ii; i++) {
+            this[i] = arr[i];
+          }
+        };
+        return imageData;
+      };
+    }
+  }
+})();
+
+// Support: IE<10, Android<4.0, iOS
+(function checkRequestAnimationFrame() {
+  function fakeRequestAnimationFrame(callback) {
+    window.setTimeout(callback, 20);
+  }
+
+  var isIOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+  if (isIOS) {
+    // requestAnimationFrame on iOS is broken, replacing with fake one.
+    window.requestAnimationFrame = fakeRequestAnimationFrame;
+    return;
+  }
+  if ('requestAnimationFrame' in window) {
+    return;
+  }
+  window.requestAnimationFrame =
+    window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    fakeRequestAnimationFrame;
+})();
+
+(function checkCanvasSizeLimitation() {
+  var isIOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+  var isAndroid = /Android/g.test(navigator.userAgent);
+  if (isIOS || isAndroid) {
+    // 5MP
+    PDFJS.maxCanvasPixels = 5242880;
+  }
+})();
+
+// Disable fullscreen support for certain problematic configurations.
+// Support: IE11+ (when embedded).
+(function checkFullscreenSupport() {
+  var isEmbeddedIE = (navigator.userAgent.indexOf('Trident') >= 0 &&
+                      window.parent !== window);
+  if (isEmbeddedIE) {
+    PDFJS.disableFullscreen = true;
+  }
+})();
+</script>
+<script>
+(function(){/*
+ pdf2htmlEX.js: Core UI functions for pdf2htmlEX 
+ Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> and other contributors 
+ https://github.com/coolwanglu/pdf2htmlEX/blob/master/share/LICENSE 
+*/
+var pdf2htmlEX=window.pdf2htmlEX=window.pdf2htmlEX||{},CSS_CLASS_NAMES={page_frame:"pf",page_content_box:"pc",page_data:"pi",background_image:"bi",link:"l",input_radio:"ir",__dummy__:"no comma"},DEFAULT_CONFIG={container_id:"page-container",sidebar_id:"sidebar",outline_id:"outline",loading_indicator_cls:"loading-indicator",preload_pages:3,render_timeout:100,scale_step:0.9,key_handler:!0,hashchange_handler:!0,view_history_handler:!0,__dummy__:"no comma"},EPS=1E-6;
+function invert(a){var b=a[0]*a[3]-a[1]*a[2];return[a[3]/b,-a[1]/b,-a[2]/b,a[0]/b,(a[2]*a[5]-a[3]*a[4])/b,(a[1]*a[4]-a[0]*a[5])/b]}function transform(a,b){return[a[0]*b[0]+a[2]*b[1]+a[4],a[1]*b[0]+a[3]*b[1]+a[5]]}function get_page_number(a){return parseInt(a.getAttribute("data-page-no"),16)}function disable_dragstart(a){for(var b=0,c=a.length;b<c;++b)a[b].addEventListener("dragstart",function(){return!1},!1)}
+function clone_and_extend_objs(a){for(var b={},c=0,e=arguments.length;c<e;++c){var h=arguments[c],d;for(d in h)h.hasOwnProperty(d)&&(b[d]=h[d])}return b}
+function Page(a){if(a){this.shown=this.loaded=!1;this.page=a;this.num=get_page_number(a);this.original_height=a.clientHeight;this.original_width=a.clientWidth;var b=a.getElementsByClassName(CSS_CLASS_NAMES.page_content_box)[0];b&&(this.content_box=b,this.original_scale=this.cur_scale=this.original_height/b.clientHeight,this.page_data=JSON.parse(a.getElementsByClassName(CSS_CLASS_NAMES.page_data)[0].getAttribute("data-data")),this.ctm=this.page_data.ctm,this.ictm=invert(this.ctm),this.loaded=!0)}}
+Page.prototype={hide:function(){this.loaded&&this.shown&&(this.content_box.classList.remove("opened"),this.shown=!1)},show:function(){this.loaded&&!this.shown&&(this.content_box.classList.add("opened"),this.shown=!0)},rescale:function(a){this.cur_scale=0===a?this.original_scale:a;this.loaded&&(a=this.content_box.style,a.msTransform=a.webkitTransform=a.transform="scale("+this.cur_scale.toFixed(3)+")");a=this.page.style;a.height=this.original_height*this.cur_scale+"px";a.width=this.original_width*this.cur_scale+
+"px"},view_position:function(){var a=this.page,b=a.parentNode;return[b.scrollLeft-a.offsetLeft-a.clientLeft,b.scrollTop-a.offsetTop-a.clientTop]},height:function(){return this.page.clientHeight},width:function(){return this.page.clientWidth}};function Viewer(a){this.config=clone_and_extend_objs(DEFAULT_CONFIG,0<arguments.length?a:{});this.pages_loading=[];this.init_before_loading_content();var b=this;document.addEventListener("DOMContentLoaded",function(){b.init_after_loading_content()},!1)}
+Viewer.prototype={scale:1,cur_page_idx:0,first_page_idx:0,init_before_loading_content:function(){this.pre_hide_pages()},initialize_radio_button:function(){for(var a=document.getElementsByClassName(CSS_CLASS_NAMES.input_radio),b=0;b<a.length;b++)a[b].addEventListener("click",function(){this.classList.toggle("checked")})},init_after_loading_content:function(){this.sidebar=document.getElementById(this.config.sidebar_id);this.outline=document.getElementById(this.config.outline_id);this.container=document.getElementById(this.config.container_id);
+this.loading_indicator=document.getElementsByClassName(this.config.loading_indicator_cls)[0];for(var a=!0,b=this.outline.childNodes,c=0,e=b.length;c<e;++c)if("ul"===b[c].nodeName.toLowerCase()){a=!1;break}a||this.sidebar.classList.add("opened");this.find_pages();if(0!=this.pages.length){disable_dragstart(document.getElementsByClassName(CSS_CLASS_NAMES.background_image));this.config.key_handler&&this.register_key_handler();var h=this;this.config.hashchange_handler&&window.addEventListener("hashchange",
+function(a){h.navigate_to_dest(document.location.hash.substring(1))},!1);this.config.view_history_handler&&window.addEventListener("popstate",function(a){a.state&&h.navigate_to_dest(a.state)},!1);this.container.addEventListener("scroll",function(){h.update_page_idx();h.schedule_render(!0)},!1);[this.container,this.outline].forEach(function(a){a.addEventListener("click",h.link_handler.bind(h),!1)});this.initialize_radio_button();this.render()}},find_pages:function(){for(var a=[],b={},c=this.container.childNodes,
+e=0,h=c.length;e<h;++e){var d=c[e];d.nodeType===Node.ELEMENT_NODE&&d.classList.contains(CSS_CLASS_NAMES.page_frame)&&(d=new Page(d),a.push(d),b[d.num]=a.length-1)}this.pages=a;this.page_map=b},load_page:function(a,b,c){var e=this.pages;if(!(a>=e.length)&&(e=e[a],!e.loaded&&!this.pages_loading[a])){var e=e.page,h=e.getAttribute("data-page-url");if(h){this.pages_loading[a]=!0;var d=e.getElementsByClassName(this.config.loading_indicator_cls)[0];"undefined"===typeof d&&(d=this.loading_indicator.cloneNode(!0),
+d.classList.add("active"),e.appendChild(d));var f=this,g=new XMLHttpRequest;g.open("GET",h,!0);g.onload=function(){if(200===g.status||0===g.status){var b=document.createElement("div");b.innerHTML=g.responseText;for(var d=null,b=b.childNodes,e=0,h=b.length;e<h;++e){var p=b[e];if(p.nodeType===Node.ELEMENT_NODE&&p.classList.contains(CSS_CLASS_NAMES.page_frame)){d=p;break}}b=f.pages[a];f.container.replaceChild(d,b.page);b=new Page(d);f.pages[a]=b;b.hide();b.rescale(f.scale);disable_dragstart(d.getElementsByClassName(CSS_CLASS_NAMES.background_image));
+f.schedule_render(!1);c&&c(b)}delete f.pages_loading[a]};g.send(null)}void 0===b&&(b=this.config.preload_pages);0<--b&&(f=this,setTimeout(function(){f.load_page(a+1,b)},0))}},pre_hide_pages:function(){var a="@media screen{."+CSS_CLASS_NAMES.page_content_box+"{display:none;}}",b=document.createElement("style");b.styleSheet?b.styleSheet.cssText=a:b.appendChild(document.createTextNode(a));document.head.appendChild(b)},render:function(){for(var a=this.container,b=a.scrollTop,c=a.clientHeight,a=b-c,b=
+b+c+c,c=this.pages,e=0,h=c.length;e<h;++e){var d=c[e],f=d.page,g=f.offsetTop+f.clientTop,f=g+f.clientHeight;g<=b&&f>=a?d.loaded?d.show():this.load_page(e):d.hide()}},update_page_idx:function(){var a=this.pages,b=a.length;if(!(2>b)){for(var c=this.container,e=c.scrollTop,c=e+c.clientHeight,h=-1,d=b,f=d-h;1<f;){var g=h+Math.floor(f/2),f=a[g].page;f.offsetTop+f.clientTop+f.clientHeight>=e?d=g:h=g;f=d-h}this.first_page_idx=d;for(var g=h=this.cur_page_idx,k=0;d<b;++d){var f=a[d].page,l=f.offsetTop+f.clientTop,
+f=f.clientHeight;if(l>c)break;f=(Math.min(c,l+f)-Math.max(e,l))/f;if(d===h&&Math.abs(f-1)<=EPS){g=h;break}f>k&&(k=f,g=d)}this.cur_page_idx=g}},schedule_render:function(a){if(void 0!==this.render_timer){if(!a)return;clearTimeout(this.render_timer)}var b=this;this.render_timer=setTimeout(function(){delete b.render_timer;b.render()},this.config.render_timeout)},register_key_handler:function(){var a=this;window.addEventListener("DOMMouseScroll",function(b){if(b.ctrlKey){b.preventDefault();var c=a.container,
+e=c.getBoundingClientRect(),c=[b.clientX-e.left-c.clientLeft,b.clientY-e.top-c.clientTop];a.rescale(Math.pow(a.config.scale_step,b.detail),!0,c)}},!1);window.addEventListener("keydown",function(b){var c=!1,e=b.ctrlKey||b.metaKey,h=b.altKey;switch(b.keyCode){case 61:case 107:case 187:e&&(a.rescale(1/a.config.scale_step,!0),c=!0);break;case 173:case 109:case 189:e&&(a.rescale(a.config.scale_step,!0),c=!0);break;case 48:e&&(a.rescale(0,!1),c=!0);break;case 33:h?a.scroll_to(a.cur_page_idx-1):a.container.scrollTop-=
+a.container.clientHeight;c=!0;break;case 34:h?a.scroll_to(a.cur_page_idx+1):a.container.scrollTop+=a.container.clientHeight;c=!0;break;case 35:a.container.scrollTop=a.container.scrollHeight;c=!0;break;case 36:a.container.scrollTop=0,c=!0}c&&b.preventDefault()},!1)},rescale:function(a,b,c){var e=this.scale;this.scale=a=0===a?1:b?e*a:a;c||(c=[0,0]);b=this.container;c[0]+=b.scrollLeft;c[1]+=b.scrollTop;for(var h=this.pages,d=h.length,f=this.first_page_idx;f<d;++f){var g=h[f].page;if(g.offsetTop+g.clientTop>=
+c[1])break}g=f-1;0>g&&(g=0);var g=h[g].page,k=g.clientWidth,f=g.clientHeight,l=g.offsetLeft+g.clientLeft,m=c[0]-l;0>m?m=0:m>k&&(m=k);k=g.offsetTop+g.clientTop;c=c[1]-k;0>c?c=0:c>f&&(c=f);for(f=0;f<d;++f)h[f].rescale(a);b.scrollLeft+=m/e*a+g.offsetLeft+g.clientLeft-m-l;b.scrollTop+=c/e*a+g.offsetTop+g.clientTop-c-k;this.schedule_render(!0)},fit_width:function(){var a=this.cur_page_idx;this.rescale(this.container.clientWidth/this.pages[a].width(),!0);this.scroll_to(a)},fit_height:function(){var a=this.cur_page_idx;
+this.rescale(this.container.clientHeight/this.pages[a].height(),!0);this.scroll_to(a)},get_containing_page:function(a){for(;a;){if(a.nodeType===Node.ELEMENT_NODE&&a.classList.contains(CSS_CLASS_NAMES.page_frame)){a=get_page_number(a);var b=this.page_map;return a in b?this.pages[b[a]]:null}a=a.parentNode}return null},link_handler:function(a){var b=a.target,c=b.getAttribute("data-dest-detail");if(c){if(this.config.view_history_handler)try{var e=this.get_current_view_hash();window.history.replaceState(e,
+"","#"+e);window.history.pushState(c,"","#"+c)}catch(h){}this.navigate_to_dest(c,this.get_containing_page(b));a.preventDefault()}},navigate_to_dest:function(a,b){try{var c=JSON.parse(a)}catch(e){return}if(c instanceof Array){var h=c[0],d=this.page_map;if(h in d){for(var f=d[h],h=this.pages[f],d=2,g=c.length;d<g;++d){var k=c[d];if(!(null===k||"number"===typeof k))return}for(;6>c.length;)c.push(null);var g=b||this.pages[this.cur_page_idx],d=g.view_position(),d=transform(g.ictm,[d[0],g.height()-d[1]]),
+g=this.scale,l=[0,0],m=!0,k=!1,n=this.scale;switch(c[1]){case "XYZ":l=[null===c[2]?d[0]:c[2]*n,null===c[3]?d[1]:c[3]*n];g=c[4];if(null===g||0===g)g=this.scale;k=!0;break;case "Fit":case "FitB":l=[0,0];k=!0;break;case "FitH":case "FitBH":l=[0,null===c[2]?d[1]:c[2]*n];k=!0;break;case "FitV":case "FitBV":l=[null===c[2]?d[0]:c[2]*n,0];k=!0;break;case "FitR":l=[c[2]*n,c[5]*n],m=!1,k=!0}if(k){this.rescale(g,!1);var p=this,c=function(a){l=transform(a.ctm,l);m&&(l[1]=a.height()-l[1]);p.scroll_to(f,l)};h.loaded?
+c(h):(this.load_page(f,void 0,c),this.scroll_to(f))}}}},scroll_to:function(a,b){var c=this.pages;if(!(0>a||a>=c.length)){c=c[a].view_position();void 0===b&&(b=[0,0]);var e=this.container;e.scrollLeft+=b[0]-c[0];e.scrollTop+=b[1]-c[1]}},get_current_view_hash:function(){var a=[],b=this.pages[this.cur_page_idx];a.push(b.num);a.push("XYZ");var c=b.view_position(),c=transform(b.ictm,[c[0],b.height()-c[1]]);a.push(c[0]/this.scale);a.push(c[1]/this.scale);a.push(this.scale);return JSON.stringify(a)}};
+pdf2htmlEX.Viewer=Viewer;})();
+</script>
+<script>
+try{
+pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
+}catch(e){}
+</script>
+<title></title>
+</head>
+<body>
+<div id="sidebar">
+<div id="outline">
+<ul><li><a class="l" href="#pf1" data-dest-detail='[1,"XYZ",53,619,null]'> Pedagogical and Future Implications for the Training of Data Translators</a><ul><li><a class="l" href="#pf5" data-dest-detail='[5,"XYZ",53,195,null]'>References</a></li></ul></li></ul></div>
+</div>
+<div id="page-container">
+<div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="data:image/png;base64,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NNTX1ycSiWtDQ4ODg8XFxQ0rV+bftJabwJ06vuzwWTEAaPkPtPxePjl1KoTw1NNP/wvnH7fce+wALHmLWtY+/vjjix7749JyAFiMmpqaf5OZaDkAluWP9vy1HIClbnp6+s6nkv/7m5mZ0XIAlrra2tp0Ot3d3V1XV/fITX5wcDD+I2g5AEtXa+v6vv6+vit9fX19j+L8q2uqW1vXuycNgKVubGzsEZ15fBu6lgPAo82zVQBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywFAywEALQcAtBwA0HIA0HIAQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwC0HADQcgBAywFAywEALQcAtBwAtBwA0HIAQMsBAC0HAC0HALQcANByAEDLAUDLAQAtBwC0HADQcgDQcgBAywEALQcAtBwAtBwA0HIAQMsBQMsBAC0HALQcANByANByAEDLAQAtBwC0HAC0HADQcgBAywEALQcALQcAtBwA0HIAQMsBQMsBAC0HALQcALQcANByAEDLAQAtBwAtBwAeBQl/BTxsURT5SwB4eP4P5U66wNJCjQEAAAAASUVORK5CYII="/><div class="t m0 x0 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">P<span class="_ _0"></span>edagogical <span class="_ _1"> </span>and <span class="_ _1"> </span>Futur<span class="_ _0"></span>e <span class="_ _1"> </span>Implications </div><div class="t m0 x0 h2 y2 ff1 fs0 fc0 sc0 ls1 ws0">f<span class="_ _0"></span>or <span class="_ _1"> </span>the <span class="_ _1"> </span>T<span class="_ _2"></span>raining <span class="_ _1"> </span>of <span class="_ _1"> </span>Data <span class="_ _1"> </span>T<span class="_ _2"></span>ranslators </div><div class="t m0 x0 h3 y3 ff1 fs1 fc0 sc0 ls2 ws0">Boba <span class="_ _3"> </span>Samuels, <span class="_ _3"> </span>Donna <span class="_ _3"> </span>K<span class="_ _0"></span>otsopoulos, <span class="_ _3"> </span>and <span class="_ _3"> </span>Douglas <span class="_ _3"> </span>G. <span class="_ _3"> </span>W<span class="_ _4"></span>oolford </div><div class="t m0 x0 h3 y4 ff1 fs1 fc0 sc0 ls3 ws0">Abstract <span class="_ _5"> </span><span class="ff2 ls2">Sharing <span class="_ _6"> </span>data <span class="_ _6"> </span>stories <span class="_ _6"> </span>is <span class="_ _6"> </span>an <span class="_ _6"> </span>exciting <span class="_ _6"> </span>opportunity <span class="_ _6"> </span>for <span class="_ _6"> </span>inte<span class="_ _0"></span>grating <span class="_ _6"> </span>data <span class="_ _6"> </span>into <span class="_ _6"> </span>the </span></div><div class="t m0 x0 h4 y5 ff2 fs1 fc0 sc0 ls3 ws0">workplace. <span class="_ _3"> </span>The <span class="_ _7"> </span>examples <span class="_ _3"> </span>provided <span class="_ _7"> </span>in <span class="_ _3"> </span>the <span class="_ _7"> </span>chapters <span class="_ _3"> </span>of <span class="_ _7"> </span>this <span class="_ _8"> </span>book <span class="_ _8"> </span>rev<span class="_ _0"></span>eal <span class="_ _8"> </span>three <span class="_ _8"> </span>imper-</div><div class="t m0 x0 h4 y6 ff2 fs1 fc0 sc0 ls2 ws0">ativ<span class="_ _0"></span>es <span class="_ _8"> </span>for <span class="_ _9"> </span>training <span class="_ _7"> </span>data <span class="_ _7"> </span>translators: <span class="_ _7"> </span>1) <span class="_ _7"> </span>interdisciplinarity<span class="_ _4"></span>, <span class="_ _9"> </span>2) <span class="_ _7"> </span>a <span class="_ _7"> </span>knowledge <span class="_ _8"> </span>exchange </div><div class="t m0 x0 h4 y7 ff2 fs1 fc0 sc0 ls3 ws0">frame<span class="_ _0"></span>work <span class="_ _8"> </span>(KEF), <span class="_ _9"> </span>and <span class="_ _7"> </span>3) <span class="_ _7"> </span>language <span class="_ _7"> </span>calibration. <span class="_ _7"> </span>W<span class="_ _4"></span>e <span class="_ _7"> </span>propose <span class="_ _7"> </span>that <span class="_ _7"> </span>a <span class="_ _7"> </span>focus <span class="_ _7"> </span>on <span class="_ _7"> </span>devel-</div><div class="t m0 x0 h4 y8 ff2 fs1 fc0 sc0 ls2 ws0">oping <span class="_ _6"> </span>students’ <span class="_ _3"> </span>skills <span class="_ _6"> </span>in <span class="_ _3"> </span>these <span class="_ _6"> </span>areas <span class="_ _3"> </span>must <span class="_ _6"> </span>be <span class="_ _a"> </span>coupled <span class="_ _a"> </span>with <span class="_ _6"> </span>data <span class="_ _a"> </span>science <span class="_ _a"> </span>training <span class="_ _a"> </span>if <span class="_ _a"> </span>we </div><div class="t m0 x0 h4 y9 ff2 fs1 fc0 sc0 ls2 ws0">are <span class="_ _a"> </span>to <span class="_ _a"> </span>prepare <span class="_ _3"> </span>effecti<span class="_ _0"></span>ve <span class="_ _6"> </span>data <span class="_ _3"> </span>translators. <span class="_ _a"> </span>Instructors <span class="_ _a"> </span>must <span class="_ _3"> </span>look <span class="_ _a"> </span>to <span class="_ _3"> </span>adjust <span class="_ _a"> </span>not <span class="_ _3"> </span>just <span class="_ _a"> </span>their </div><div class="t m0 x0 h4 ya ff2 fs1 fc0 sc0 ls2 ws0">methods, <span class="_ _7"> </span>but <span class="_ _9"> </span>the <span class="_ _7"> </span>philosophy <span class="_ _9"> </span>behind <span class="_ _9"> </span>their <span class="_ _9"> </span>instruction <span class="_ _9"> </span>to <span class="_ _7"> </span>train <span class="_ _9"> </span>students <span class="_ _9"> </span>for <span class="_ _9"> </span>the <span class="_ _9"> </span>next </div><div class="t m0 x0 h4 yb ff2 fs1 fc0 sc0 ls2 ws0">generation <span class="_ _3"> </span>of <span class="_ _3"> </span>data <span class="_ _3"> </span>translation <span class="_ _3"> </span>jobs. </div><div class="t m0 x0 h4 yc ff2 fs1 fc0 sc0 ls2 ws0">The <span class="_ _a"> </span>sharing <span class="_ _3"> </span>of <span class="_ _3"> </span>data <span class="_ _3"> </span>science <span class="_ _a"> </span>stories <span class="_ _3"> </span>within <span class="_ _3"> </span>and <span class="_ _3"> </span>beyond <span class="_ _a"> </span>single <span class="_ _3"> </span>disciplines <span class="_ _a"> </span>presents <span class="_ _3"> </span>an </div><div class="t m0 x0 h4 yd ff2 fs1 fc0 sc0 ls2 ws0">exciting <span class="_ _3"> </span>opportunity <span class="_ _3"> </span>that <span class="_ _8"> </span>is <span class="_ _8"> </span>increasingly <span class="_ _3"> </span>recognized <span class="_ _8"> </span>by <span class="_ _3"> </span>data <span class="_ _8"> </span>users <span class="_ _8"> </span>within <span class="_ _3"> </span>academia, </div><div class="t m0 x0 h4 ye ff2 fs1 fc0 sc0 ls3 ws0">workplaces <span class="_ _3"> </span>of <span class="_ _3"> </span>all <span class="_ _8"> </span>types, <span class="_ _3"> </span>and <span class="_ _3"> </span>the <span class="_ _8"> </span>public <span class="_ _3"> </span>realm. <span class="_ _8"> </span>In <span class="_ _3"> </span>the <span class="_ _3"> </span>chapters <span class="_ _8"> </span>of <span class="_ _3"> </span>this <span class="_ _8"> </span>book, <span class="_ _3"> </span>we <span class="_ _8"> </span>hav<span class="_ _0"></span>e </div><div class="t m0 x0 h4 yf ff2 fs1 fc0 sc0 ls3 ws0">gathered <span class="_ _3"> </span>a <span class="_ _8"> </span>variety <span class="_ _3"> </span>of <span class="_ _8"> </span>examples <span class="_ _8"> </span>demonstrating <span class="_ _8"> </span>how <span class="_ _3"> </span>such <span class="_ _8"> </span>data <span class="_ _8"> </span>stories <span class="_ _8"> </span>can <span class="_ _8"> </span>be <span class="_ _3"> </span>created </div><div class="t m0 x0 h4 y10 ff2 fs1 fc0 sc0 ls2 ws0">and <span class="_ _b"> </span>taught <span class="_ _b"> </span>to <span class="_ _b"> </span>new <span class="_ _b"> </span>generations <span class="_ _b"> </span>of <span class="_ _b"> </span>data <span class="_ _b"> </span>scientists <span class="_ _b"> </span>and, <span class="_ _b"> </span>most <span class="_ _b"> </span>especially<span class="_ _4"></span>, <span class="_ _b"> </span>those <span class="_ _b"> </span>who <span class="_ _b"> </span>aspire </div><div class="t m0 x0 h4 y11 ff2 fs1 fc0 sc0 ls3 ws0">to <span class="_ _7"> </span>using <span class="_ _9"> </span>the <span class="_ _9"> </span>wealth <span class="_ _7"> </span>of <span class="_ _9"> </span>data <span class="_ _9"> </span>av<span class="_ _0"></span>ailable <span class="_ _7"> </span>yet <span class="_ _9"> </span>who <span class="_ _9"> </span>lack <span class="_ _7"> </span>as <span class="_ _9"> </span>strong <span class="_ _9"> </span>a <span class="_ _7"> </span>background <span class="_ _9"> </span>in <span class="_ _9"> </span>data </div><div class="t m0 x0 h4 y12 ff2 fs1 fc0 sc0 ls2 ws0">science <span class="_ _6"> </span>and <span class="_ _a"> </span>analytics. <span class="_ _a"> </span>It <span class="_ _a"> </span>is <span class="_ _a"> </span>this <span class="_ _a"> </span>group—those <span class="_ _a"> </span>we <span class="_ _6"> </span>call <span class="_ _a"> </span>data <span class="_ _a"> </span>translators—who <span class="_ _a"> </span>navigate </div><div class="t m0 x0 h4 y13 ff2 fs1 fc0 sc0 ls2 ws0">the <span class="_ _a"> </span>shifting <span class="_ _a"> </span>boundaries <span class="_ _a"> </span>between <span class="_ _a"> </span>disciplinary <span class="_ _a"> </span>expertise <span class="_ _6"> </span>and <span class="_ _a"> </span>data <span class="_ _a"> </span>science, <span class="_ _a"> </span>interpreting </div><div class="t m0 x0 h4 y14 ff2 fs1 fc0 sc0 ls3 ws0">data <span class="_ _3"> </span>in <span class="_ _3"> </span>meaningful <span class="_ _3"> </span>and <span class="_ _3"> </span>accurate <span class="_ _3"> </span>ways <span class="_ _a"> </span>for <span class="_ _3"> </span>others. </div><div class="t m0 x1 h4 y15 ff2 fs1 fc0 sc0 ls3 ws0">Ho<span class="_ _0"></span>w <span class="_ _7"> </span>can <span class="_ _8"> </span>we <span class="_ _7"> </span>teach <span class="_ _7"> </span>new <span class="_ _8"> </span>generations <span class="_ _8"> </span>of <span class="_ _7"> </span>data <span class="_ _7"> </span>translators <span class="_ _7"> </span>to <span class="_ _8"> </span>navigate <span class="_ _8"> </span>these <span class="_ _7"> </span>bound-</div><div class="t m0 x0 h4 y16 ff2 fs1 fc0 sc0 ls2 ws0">aries? <span class="_ _3"> </span>The <span class="_ _3"> </span>case <span class="_ _3"> </span>studies <span class="_ _3"> </span>in <span class="_ _3"> </span>this <span class="_ _3"> </span>book <span class="_ _8"> </span>suggest <span class="_ _3"> </span>three <span class="_ _3"> </span>factors <span class="_ _3"> </span>need <span class="_ _3"> </span>attention. <span class="_ _3"> </span>The <span class="_ _3"> </span>ﬁrst <span class="_ _3"> </span>is </div><div class="t m0 x0 h4 y17 ff2 fs1 fc0 sc0 ls2 ws0">that <span class="_ _a"> </span>to <span class="_ _a"> </span>develop <span class="_ _6"> </span>effecti<span class="_ _0"></span>ve <span class="_ _6"> </span>data <span class="_ _3"> </span>translators <span class="_ _a"> </span>we <span class="_ _a"> </span>must <span class="_ _3"> </span>ackno<span class="_ _0"></span>wledge <span class="_ _a"> </span>interdisciplinarity <span class="_ _a"> </span>as</div><div class="t m0 x0 h5 y18 ff2 fs2 fc0 sc0 ls4 ws0">B. <span class="_ _6"> </span>Samuels <span class="_ _a"> </span><span class="ls0">(</span></div><div class="t m0 x2 h6 y19 ff3 fs3 fc0 sc0 ls0 ws0">B</div><div class="t m0 x3 h5 y1a ff2 fs2 fc0 sc0 ls0 ws0">) </div><div class="t m0 x0 h5 y1b ff2 fs2 fc0 sc0 ls5 ws0">Faculty <span class="_ _6"> </span>of <span class="_ _6"> </span>Kinesiology <span class="_ _a"> </span>and <span class="_ _a"> </span>Physical <span class="_ _6"> </span>Education, <span class="_ _a"> </span>Univ<span class="_ _0"></span>ersity <span class="_ _6"> </span>of <span class="_ _a"> </span>T<span class="_ _4"></span>oronto, <span class="_ _a"> </span>T<span class="_ _4"></span>oronto, <span class="_ _6"> </span>Ontario, <span class="_ _a"> </span>Canada </div><div class="t m0 x0 h5 y1c ff2 fs2 fc0 sc0 ls6 ws0">e-mail: <span class="_ _6"> </span><span class="fc1 ls5">boba.samuels@utoronto.ca </span></div><div class="t m0 x0 h5 y1d ff2 fs2 fc0 sc0 ls7 ws0">D. <span class="_ _6"> </span>Kotsopoulos </div><div class="t m0 x0 h5 y1e ff2 fs2 fc0 sc0 ls5 ws0">Faculty <span class="_ _6"> </span>of <span class="_ _6"> </span>Education, <span class="_ _a"> </span>University <span class="_ _6"> </span>of <span class="_ _6"> </span>W<span class="_ _4"></span>estern <span class="_ _a"> </span>Ontario, <span class="_ _6"> </span>London, <span class="_ _a"> </span>Ontario, <span class="_ _a"> </span>Canada </div><div class="t m0 x0 h5 y1f ff2 fs2 fc0 sc0 ls6 ws0">e-mail: <span class="_ _6"> </span><span class="fc1 ls8">dkotsopo@uwo.ca </span></div><div class="t m0 x0 h5 y20 ff2 fs2 fc0 sc0 ls7 ws0">D. <span class="_ _6"> </span>G. <span class="_ _a"> </span>W<span class="_ _4"></span>oolford </div><div class="t m0 x0 h5 y21 ff2 fs2 fc0 sc0 ls0 ws0">Department <span class="_ _6"> </span>of <span class="_ _a"> </span>Statistical <span class="_ _6"> </span>and <span class="_ _a"> </span>Actuarial <span class="_ _a"> </span>Sciences, <span class="_ _6"> </span>University <span class="_ _6"> </span>of <span class="_ _6"> </span>W<span class="_ _4"></span>estern <span class="_ _a"> </span>Ontario, <span class="_ _6"> </span>London, </div><div class="t m0 x0 h5 y22 ff2 fs2 fc0 sc0 ls5 ws0">Ontario, <span class="_ _6"> </span>Canada </div><div class="t m0 x0 h5 y23 ff2 fs2 fc0 sc0 ls6 ws0">e-mail: <span class="_ _6"> </span><span class="fc1 ls8">dwoolfor@uwo.ca </span></div><div class="t m0 x0 h5 y24 ff2 fs2 fc0 sc0 ls5 ws0">© <span class="_ _6"> </span>The <span class="_ _a"> </span>Author(s), <span class="_ _a"> </span>under <span class="_ _6"> </span>exclusiv<span class="_ _0"></span>e <span class="_ _6"> </span>license <span class="_ _a"> </span>to <span class="_ _6"> </span>Springer <span class="_ _a"> </span>Nature <span class="_ _a"> </span>Switzerland <span class="_ _6"> </span>AG <span class="_ _6"> </span>2023 </div><div class="t m0 x0 h5 y25 ff2 fs2 fc0 sc0 ls8 ws0">D. <span class="_ _6"> </span>G. <span class="_ _a"> </span>W<span class="_ _4"></span>oolford <span class="_ _a"> </span>et <span class="_ _6"> </span>al. <span class="_ _a"> </span>(eds.), <span class="_ _6"> </span><span class="ff4 ls4">Applied <span class="_ _a"> </span>Data <span class="_ _a"> </span>Science<span class="ff2">, <span class="_ _6"> </span>Studies <span class="_ _a"> </span>in <span class="_ _6"> </span>Big <span class="_ _a"> </span>Data <span class="_ _a"> </span>125, </span></span></div><div class="t m0 x0 h5 y26 ff2 fs2 fc1 sc0 ls7 ws0">https://doi.org/10.1007/978-3-031-29937-7_13 </div><div class="t m0 x4 h5 y24 ff2 fs2 fc0 sc0 ls9 ws0">185</div><a class="l" href="http://crossmark.crossref.org/dialog/?doi=10.1007/978-3-031-29937-7_13&amp;domain=pdf"><div class="d m1" style="border-style:none;position:absolute;left:353.142000px;bottom:577.113000px;width:33.000000px;height:33.000000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="mailto:boba.samuels@utoronto.ca"><div class="d m1" style="border-style:none;position:absolute;left:79.686000px;bottom:162.015000px;width:91.999000px;height:5.606000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="mailto:dkotsopo@uwo.ca"><div class="d m1" style="border-style:none;position:absolute;left:79.686000px;bottom:124.312000px;width:62.902000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="mailto:dwoolfor@uwo.ca"><div class="d m1" style="border-style:none;position:absolute;left:79.686000px;bottom:80.322000px;width:62.894000px;height:5.606000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://doi.org/10.1007/978-3-031-29937-7_13"><div class="d m1" style="border-style:none;position:absolute;left:53.577000px;bottom:35.644000px;width:158.864000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf2" class="pf w0 h0" data-page-no="2"><div class="pc pc2 w0 h0"><div class="t m0 x0 h5 y27 ff2 fs2 fc0 sc0 ls0 ws0">186<span class="_ _c"> </span>B.<span class="_ _6"> </span>Samuels<span class="_ _a"> </span>et<span class="_ _6"> </span>al.</div><div class="t m0 x0 h4 y28 ff2 fs1 fc0 sc0 ls3 ws0">a <span class="_ _6"> </span>guiding <span class="_ _6"> </span>force <span class="_ _a"> </span>in <span class="_ _6"> </span>data <span class="_ _a"> </span>science. <span class="_ _6"> </span>In <span class="_ _a"> </span>other <span class="_ _6"> </span>words, <span class="_ _6"> </span>data <span class="_ _a"> </span>science <span class="_ _6"> </span>is <span class="_ _6"> </span>not <span class="_ _a"> </span>just <span class="_ _6"> </span>for <span class="_ _a"> </span>data <span class="_ _6"> </span>scien-</div><div class="t m0 x0 h4 y29 ff2 fs1 fc0 sc0 ls2 ws0">tists. <span class="_ _9"> </span>As <span class="_ _d"> </span>this <span class="_ _9"> </span>book <span class="_ _d"> </span>demonstrates, <span class="_ _d"> </span>scholars <span class="_ _9"> </span>and <span class="_ _d"> </span>stakeholders <span class="_ _9"> </span>across <span class="_ _9"> </span>many <span class="_ _d"> </span>dif<span class="_ _0"></span>ferent </div><div class="t m0 x0 h4 y2a ff2 fs1 fc0 sc0 ls3 ws0">ﬁelds <span class="_ _8"> </span>are <span class="_ _8"> </span>teaching <span class="_ _8"> </span>and <span class="_ _8"> </span>learning <span class="_ _8"> </span>how <span class="_ _3"> </span>to <span class="_ _8"> </span>tell <span class="_ _8"> </span>data <span class="_ _8"> </span>science <span class="_ _8"> </span>stories <span class="_ _8"> </span>for <span class="_ _8"> </span>their <span class="_ _7"> </span>audiences. </div><div class="t m0 x0 h4 y2b ff2 fs1 fc0 sc0 ls2 ws0">Ho<span class="_ _0"></span>wev<span class="_ _0"></span>er<span class="_ _0"></span>, <span class="_ _6"> </span>this <span class="_ _a"> </span>ubiquity <span class="_ _6"> </span>in <span class="_ _a"> </span>the <span class="_ _a"> </span>use <span class="_ _6"> </span>of <span class="_ _a"> </span>data <span class="_ _6"> </span>science <span class="_ _a"> </span>and <span class="_ _a"> </span>analytics <span class="_ _a"> </span>methods <span class="_ _6"> </span>also <span class="_ _a"> </span>runs <span class="_ _6"> </span>the </div><div class="t m0 x0 h4 y2c ff2 fs1 fc0 sc0 ls3 ws0">risk <span class="_ _7"> </span>of <span class="_ _9"> </span>incorrect <span class="_ _7"> </span>analyses <span class="_ _9"> </span>leading <span class="_ _7"> </span>to <span class="_ _9"> </span>incorrect <span class="_ _7"> </span>conclusions—just <span class="_ _9"> </span>because <span class="_ _7"> </span>someone </div><div class="t m0 x0 h4 y2d ff2 fs1 fc0 sc0 ls3 ws0">has <span class="_ _7"> </span>data <span class="_ _9"> </span>that <span class="_ _7"> </span>can <span class="_ _9"> </span>be <span class="_ _9"> </span>run <span class="_ _7"> </span>through <span class="_ _9"> </span>a <span class="_ _7"> </span>data <span class="_ _9"> </span>modelling <span class="_ _9"> </span>method, <span class="_ _7"> </span>doesn’t <span class="_ _7"> </span>mean <span class="_ _9"> </span>that <span class="_ _7"> </span>it <span class="_ _9"> </span>is </div><div class="t m0 x0 h4 y2e ff2 fs1 fc0 sc0 ls3 ws0">being <span class="_ _7"> </span>done <span class="_ _9"> </span>correctly<span class="_ _4"></span>. <span class="_ _9"> </span>This <span class="_ _9"> </span>was <span class="_ _7"> </span>highlighted <span class="_ _9"> </span>by <span class="_ _9"> </span>Li <span class="_ _7"> </span>in <span class="_ _9"> </span>Chap. </div><div class="t m0 x5 h4 y2f ff2 fs1 fc1 sc0 lsa ws0">10 <span class="_ _7"> </span><span class="fc0 ls3">through <span class="_ _9"> </span>an <span class="_ _9"> </span>analysis </span></div><div class="t m0 x0 h4 y30 ff2 fs1 fc0 sc0 ls3 ws0">of <span class="_ _a"> </span>binary <span class="_ _a"> </span>(correct/incorrect) <span class="_ _a"> </span>r esponse <span class="_ _3"> </span>data <span class="_ _a"> </span>that <span class="_ _a"> </span>demonstrated <span class="_ _3"> </span>the <span class="_ _a"> </span>need <span class="_ _a"> </span>to <span class="_ _a"> </span>understand </div><div class="t m0 x0 h4 y31 ff2 fs1 fc0 sc0 ls3 ws0">the <span class="_ _3"> </span>underlying <span class="_ _3"> </span>assumptions <span class="_ _8"> </span>of <span class="_ _3"> </span>data <span class="_ _3"> </span>modelling <span class="_ _8"> </span>methods <span class="_ _3"> </span>and <span class="_ _3"> </span>to <span class="_ _8"> </span>select <span class="_ _3"> </span>an <span class="_ _3"> </span>appropriate </div><div class="t m0 x0 h4 y32 ff2 fs1 fc0 sc0 ls3 ws0">technique <span class="_ _9"> </span>accordingly<span class="_ _4"></span>. <span class="_ _9"> </span>Hence, <span class="_ _9"> </span>more <span class="_ _9"> </span>attention <span class="_ _9"> </span>to <span class="_ _9"> </span>the <span class="_ _9"> </span>ways <span class="_ _9"> </span>in <span class="_ _9"> </span>which <span class="_ _9"> </span>such <span class="_ _9"> </span>teaching </div><div class="t m0 x0 h4 y33 ff2 fs1 fc0 sc0 ls2 ws0">occurs <span class="_ _6"> </span>across <span class="_ _a"> </span>disciplines, <span class="_ _a"> </span>and <span class="_ _a"> </span>particularly <span class="_ _a"> </span>when <span class="_ _a"> </span>such <span class="_ _a"> </span>attempts <span class="_ _a"> </span>are <span class="_ _6"> </span>multidisciplinary<span class="_ _0"></span>, </div><div class="t m0 x0 h4 y34 ff2 fs1 fc0 sc0 ls3 ws0">is <span class="_ _6"> </span>needed. <span class="_ _a"> </span>Drawing <span class="_ _a"> </span>on <span class="_ _a"> </span>the <span class="_ _6"> </span>expertise <span class="_ _a"> </span>and <span class="_ _a"> </span>experiences <span class="_ _6"> </span>of <span class="_ _a"> </span>different <span class="_ _6"> </span>stakeholders <span class="_ _a"> </span>in <span class="_ _6"> </span>this </div><div class="t m0 x0 h4 y35 ff2 fs1 fc0 sc0 ls3 ws0">endeav<span class="_ _0"></span>our <span class="_ _6"> </span>is <span class="_ _a"> </span>good <span class="_ _6"> </span>practice. <span class="_ _a"> </span>The <span class="_ _a"> </span>expertise <span class="_ _6"> </span>required <span class="_ _6"> </span>to <span class="_ _a"> </span>generate <span class="_ _a"> </span>big <span class="_ _6"> </span>data, <span class="_ _a"> </span>for <span class="_ _a"> </span>instance, </div><div class="t m0 x0 h4 y36 ff2 fs1 fc0 sc0 ls2 ws0">does <span class="_ _7"> </span>not <span class="_ _7"> </span>lead <span class="_ _7"> </span>directly <span class="_ _7"> </span>to <span class="_ _9"> </span>the <span class="_ _7"> </span>expertise <span class="_ _8"> </span>needed <span class="_ _9"> </span>to <span class="_ _7"> </span>use <span class="_ _7"> </span>this <span class="_ _7"> </span>data. <span class="_ _7"> </span>Even <span class="_ _7"> </span>with <span class="_ _7"> </span>so <span class="_ _7"> </span>much </div><div class="t m0 x0 h4 y37 ff2 fs1 fc0 sc0 ls3 ws0">data <span class="_ _6"> </span>av<span class="_ _0"></span>ailable, <span class="_ _6"> </span>only <span class="_ _a"> </span>18% <span class="_ _a"> </span>of <span class="_ _6"> </span>companies <span class="_ _a"> </span>can <span class="_ _a"> </span>use <span class="_ _6"> </span>the <span class="_ _a"> </span>data <span class="_ _a"> </span>they <span class="_ _6"> </span>generate <span class="_ _6"> </span>effecti<span class="_ _0"></span>vely <span class="_ _6"> </span>[</div><div class="t m0 x6 h4 y38 ff2 fs1 fc1 sc0 ls0 ws0">1<span class="fc0 lsb">]. </span></div><div class="t m0 x0 h4 y39 ff2 fs1 fc0 sc0 ls2 ws0">More <span class="_ _6"> </span>is <span class="_ _6"> </span>needed, <span class="_ _a"> </span>therefore, <span class="_ _6"> </span>than <span class="_ _a"> </span>technical <span class="_ _6"> </span>skills <span class="_ _a"> </span>in <span class="_ _6"> </span>data <span class="_ _a"> </span>science <span class="_ _6"> </span>to <span class="_ _a"> </span>effecti<span class="_ _4"></span>vely <span class="_ _6"> </span>use <span class="_ _a"> </span>data </div><div class="t m0 x0 h4 y3a ff2 fs1 fc0 sc0 ls2 ws0">to <span class="_ _3"> </span>address <span class="_ _3"> </span>real <span class="_ _3"> </span>discipline-speciﬁc <span class="_ _3"> </span>or <span class="_ _3"> </span>workplace <span class="_ _a"> </span>issues. </div><div class="t m0 x1 h4 y3b ff2 fs1 fc0 sc0 ls3 ws0">In <span class="_ _1"> </span>Schanzer <span class="_ _e"> </span>et <span class="_ _1"> </span>al.’<span class="_ _0"></span>s <span class="_ _1"> </span>Chap. <span class="_ _1"> </span><span class="fc1 ls0">3 <span class="_ _e"> </span></span><span class="ls2">description <span class="_ _1"> </span>of <span class="_ _e"> </span>public <span class="_ _1"> </span>health <span class="_ _1"> </span>policy <span class="_ _1"> </span>work, <span class="_ _e"> </span>multi-</span></div><div class="t m0 x0 h4 y3c ff2 fs1 fc0 sc0 ls2 ws0">disciplinary <span class="_ _a"> </span>committees <span class="_ _3"> </span>are <span class="_ _3"> </span>used <span class="_ _3"> </span>to <span class="_ _a"> </span>shape <span class="_ _3"> </span>the <span class="_ _3"> </span>creation <span class="_ _a"> </span>of <span class="_ _3"> </span>policy <span class="_ _a"> </span>guidelines, <span class="_ _3"> </span>demon-</div><div class="t m0 x0 h4 y3d ff2 fs1 fc0 sc0 ls3 ws0">strating <span class="_ _6"> </span>that <span class="_ _a"> </span>approaches <span class="_ _a"> </span>that <span class="_ _a"> </span>include <span class="_ _a"> </span>multiple <span class="_ _a"> </span>different <span class="_ _6"> </span>perspectiv<span class="_ _0"></span>es <span class="_ _6"> </span>can <span class="_ _a"> </span>be <span class="_ _a"> </span>effecti<span class="_ _0"></span>ve. </div><div class="t m0 x0 h4 y3e ff2 fs1 fc0 sc0 ls2 ws0">They <span class="_ _9"> </span>suggest <span class="_ _1"> </span>that <span class="_ _d"> </span>teaching <span class="_ _d"> </span>using <span class="_ _d"> </span>class <span class="_ _d"> </span>discussion <span class="_ _d"> </span>to <span class="_ _d"> </span>identify <span class="_ _d"> </span>multiple <span class="_ _d"> </span>interpreta-</div><div class="t m0 x0 h4 y3f ff2 fs1 fc0 sc0 ls2 ws0">tions <span class="_ _a"> </span>of <span class="_ _a"> </span>guidelines <span class="_ _a"> </span>can <span class="_ _3"> </span>raise <span class="_ _a"> </span>students’ <span class="_ _a"> </span>familiarity <span class="_ _a"> </span>with <span class="_ _a"> </span>such <span class="_ _a"> </span>guidelines <span class="_ _a"> </span>as <span class="_ _3"> </span>well <span class="_ _a"> </span>as <span class="_ _a"> </span>the </div><div class="t m0 x0 h4 y40 ff2 fs1 fc0 sc0 ls2 ws0">critical <span class="_ _7"> </span>revie<span class="_ _0"></span>w <span class="_ _8"> </span>process. <span class="_ _9"> </span>Such <span class="_ _7"> </span>knowledge <span class="_ _7"> </span>and <span class="_ _7"> </span>skills <span class="_ _7"> </span>are <span class="_ _9"> </span>necessary <span class="_ _7"> </span>in <span class="_ _7"> </span>understanding </div><div class="t m0 x0 h4 y41 ff2 fs1 fc0 sc0 ls2 ws0">ho<span class="_ _0"></span>w <span class="_ _3"> </span>data <span class="_ _8"> </span>analysis <span class="_ _3"> </span>is <span class="_ _3"> </span>used <span class="_ _8"> </span>to <span class="_ _3"> </span>support <span class="_ _3"> </span>creation <span class="_ _8"> </span>of <span class="_ _3"> </span>the <span class="_ _3"> </span>guidelines. <span class="_ _8"> </span>Creating <span class="_ _3"> </span>opportuni-</div><div class="t m0 x0 h4 y42 ff2 fs1 fc0 sc0 ls2 ws0">ties <span class="_ _a"> </span>for <span class="_ _3"> </span>interaction <span class="_ _3"> </span>between <span class="_ _a"> </span>disciplinary <span class="_ _3"> </span>experts <span class="_ _a"> </span>and <span class="_ _3"> </span>creating <span class="_ _3"> </span>classroom <span class="_ _3"> </span>models <span class="_ _a"> </span>that </div><div class="t m0 x0 h4 y43 ff2 fs1 fc0 sc0 ls3 ws0">replicate <span class="_ _3"> </span>the <span class="_ _3"> </span>sharing <span class="_ _3"> </span>of <span class="_ _3"> </span>different <span class="_ _3"> </span>perspectiv<span class="_ _0"></span>es <span class="_ _3"> </span>are <span class="_ _3"> </span>promising <span class="_ _3"> </span>approaches <span class="_ _3"> </span>for <span class="_ _3"> </span>encour-</div><div class="t m0 x0 h4 y44 ff2 fs1 fc0 sc0 ls2 ws0">aging <span class="_ _9"> </span>the <span class="_ _9"> </span>critical <span class="_ _7"> </span>revie<span class="_ _0"></span>w <span class="_ _9"> </span>of <span class="_ _9"> </span>data <span class="_ _9"> </span>analysis <span class="_ _9"> </span>necessary <span class="_ _9"> </span>for <span class="_ _9"> </span>ensuring <span class="_ _9"> </span>high <span class="_ _9"> </span>quality <span class="_ _9"> </span>data </div><div class="t m0 x0 h4 y45 ff2 fs1 fc0 sc0 ls2 ws0">interpretations. </div><div class="t m0 x1 h4 y46 ff2 fs1 fc0 sc0 ls3 ws0">The <span class="_ _6"> </span>second <span class="_ _a"> </span>factor <span class="_ _6"> </span>necessary <span class="_ _a"> </span>for <span class="_ _a"> </span>teaching <span class="_ _6"> </span>people <span class="_ _a"> </span>to <span class="_ _a"> </span>become <span class="_ _6"> </span>effecti<span class="_ _0"></span>ve <span class="_ _6"> </span>data <span class="_ _a"> </span>transla-</div><div class="t m0 x0 h4 y47 ff2 fs1 fc0 sc0 ls2 ws0">tors <span class="_ _a"> </span>is <span class="_ _a"> </span>to <span class="_ _3"> </span>identify <span class="_ _a"> </span>a <span class="_ _3"> </span>framew<span class="_ _0"></span>ork <span class="_ _a"> </span>for <span class="_ _a"> </span>knowledge <span class="_ _a"> </span>exchange <span class="_ _a"> </span>(KE) <span class="_ _a"> </span>between <span class="_ _3"> </span>stakeholders. </div><div class="t m0 x0 h4 y48 ff2 fs1 fc0 sc0 ls3 ws0">In <span class="_ _d"> </span>discussion <span class="_ _d"> </span>of <span class="_ _9"> </span>KE <span class="_ _d"> </span>in <span class="_ _d"> </span>the <span class="_ _d"> </span>wildland <span class="_ _d"> </span>ﬁre <span class="_ _d"> </span>management <span class="_ _d"> </span>context, <span class="_ _9"> </span>McFayden <span class="_ _d"> </span>et <span class="_ _d"> </span>al.’<span class="_ _4"></span>s </div><div class="t m0 x0 h4 y49 ff2 fs1 fc0 sc0 lsa ws0">Chap. </div><div class="t m0 x7 h4 y4a ff2 fs1 fc1 sc0 lsa ws0">12 <span class="_ _a"> </span><span class="fc0 ls3">describes <span class="_ _a"> </span>the <span class="_ _a"> </span>need <span class="_ _a"> </span>for <span class="_ _a"> </span>intentional <span class="_ _a"> </span>engagement <span class="_ _a"> </span>in <span class="_ _a"> </span>the <span class="_ _a"> </span>sharing <span class="_ _a"> </span>of <span class="_ _a"> </span>knowledge </span></div><div class="t m0 x0 h4 y4b ff2 fs1 fc0 sc0 ls3 ws0">and <span class="_ _a"> </span>proposes <span class="_ _a"> </span>that <span class="_ _3"> </span>a <span class="_ _a"> </span>KE <span class="_ _a"> </span>framework <span class="_ _a"> </span>can <span class="_ _a"> </span>facilitate <span class="_ _a"> </span>such <span class="_ _a"> </span>iterative <span class="_ _6"> </span>engagement <span class="_ _a"> </span>between </div><div class="t m0 x0 h4 y4c ff2 fs1 fc0 sc0 ls2 ws0">researchers <span class="_ _6"> </span>and <span class="_ _b"> </span>practitioners. <span class="_ _6"> </span>In <span class="_ _6"> </span>their <span class="_ _b"> </span>words, <span class="_ _6"> </span>“Effecti<span class="_ _4"></span>ve <span class="_ _6"> </span>KE <span class="_ _b"> </span>in <span class="_ _6"> </span>ﬁre <span class="_ _6"> </span>management <span class="_ _6"> </span>helps </div><div class="t m0 x0 h4 y4d ff2 fs1 fc0 sc0 ls2 ws0">ensure <span class="_ _3"> </span>that <span class="_ _3"> </span>real-world <span class="_ _3"> </span>problems <span class="_ _3"> </span>are <span class="_ _8"> </span>understood <span class="_ _3"> </span>by <span class="_ _3"> </span>researchers, <span class="_ _8"> </span>the <span class="_ _3"> </span>research <span class="_ _3"> </span>is <span class="_ _3"> </span>rele-</div><div class="t m0 x0 h4 y4e ff2 fs1 fc0 sc0 ls2 ws0">v<span class="_ _0"></span>ant, <span class="_ _8"> </span>and <span class="_ _7"> </span>the <span class="_ _7"> </span>results <span class="_ _8"> </span>are <span class="_ _7"> </span>integrated <span class="_ _8"> </span>into <span class="_ _7"> </span>ﬁre <span class="_ _8"> </span>management <span class="_ _7"> </span>practices.” <span class="_ _7"> </span>They <span class="_ _8"> </span>describe </div><div class="t m0 x0 h4 y4f ff2 fs1 fc0 sc0 ls3 ws0">ho<span class="_ _0"></span>w <span class="_ _9"> </span>an <span class="_ _9"> </span>activ<span class="_ _0"></span>e <span class="_ _9"> </span>learning <span class="_ _9"> </span>approach <span class="_ _9"> </span>in <span class="_ _9"> </span>the <span class="_ _9"> </span>classroom <span class="_ _9"> </span>can <span class="_ _9"> </span>facilitate <span class="_ _9"> </span>use <span class="_ _9"> </span>of <span class="_ _9"> </span>such <span class="_ _9"> </span>a <span class="_ _9"> </span>KE </div><div class="t m0 x0 h4 y50 ff2 fs1 fc0 sc0 ls2 ws0">frame<span class="_ _0"></span>work <span class="_ _a"> </span>by <span class="_ _a"> </span>students <span class="_ _3"> </span>who <span class="_ _a"> </span>may <span class="_ _3"> </span>go <span class="_ _a"> </span>on <span class="_ _3"> </span>to <span class="_ _a"> </span>become <span class="_ _3"> </span>data <span class="_ _a"> </span>translators. <span class="_ _a"> </span>In <span class="_ _3"> </span>this <span class="_ _a"> </span>approach, </div><div class="t m0 x0 h4 y51 ff2 fs1 fc0 sc0 ls3 ws0">which <span class="_ _1"> </span>is <span class="_ _e"> </span>facilitated <span class="_ _1"> </span>by <span class="_ _1"> </span>knowledge <span class="_ _1"> </span>brokers, <span class="_ _1"> </span>students <span class="_ _e"> </span>practice <span class="_ _1"> </span>the <span class="_ _e"> </span>behaviours <span class="_ _d"> </span>and </div><div class="t m0 x0 h4 y52 ff2 fs1 fc0 sc0 ls2 ws0">skills <span class="_ _d"> </span>rele<span class="_ _0"></span>v<span class="_ _0"></span>ant <span class="_ _d"> </span>to <span class="_ _d"> </span>address <span class="_ _d"> </span>a <span class="_ _d"> </span>typical <span class="_ _9"> </span>real-world <span class="_ _d"> </span>problem <span class="_ _d"> </span>by <span class="_ _d"> </span>acti<span class="_ _0"></span>vely <span class="_ _d"> </span>engaging <span class="_ _9"> </span>with </div><div class="t m0 x0 h4 y53 ff2 fs1 fc0 sc0 ls3 ws0">multidisciplinary <span class="_ _a"> </span>researchers <span class="_ _3"> </span>and <span class="_ _3"> </span>practitioners <span class="_ _3"> </span>rather <span class="_ _a"> </span>than <span class="_ _3"> </span>focusing <span class="_ _3"> </span>on <span class="_ _3"> </span>the <span class="_ _a"> </span>technical </div><div class="t m0 x0 h4 y54 ff2 fs1 fc0 sc0 ls2 ws0">requirements <span class="_ _3"> </span>of <span class="_ _3"> </span>data <span class="_ _3"> </span>analysis. </div><div class="t m0 x1 h4 y55 ff2 fs1 fc0 sc0 ls3 ws0">In <span class="_ _9"> </span>their <span class="_ _d"> </span>example, <span class="_ _9"> </span>McFayden <span class="_ _9"> </span>et <span class="_ _d"> </span>al. <span class="_ _9"> </span>describe <span class="_ _d"> </span>a <span class="_ _9"> </span>scenario <span class="_ _d"> </span>in <span class="_ _9"> </span>which <span class="_ _d"> </span>students <span class="_ _9"> </span>work </div><div class="t m0 x0 h4 y56 ff2 fs1 fc0 sc0 ls2 ws0">in <span class="_ _1"> </span>teams <span class="_ _1"> </span>with <span class="_ _e"> </span>an <span class="_ _1"> </span>external <span class="_ _1"> </span>“client” <span class="_ _e"> </span>with <span class="_ _1"> </span>whom <span class="_ _e"> </span>they <span class="_ _d"> </span>meet <span class="_ _e"> </span>to <span class="_ _1"> </span>address <span class="_ _e"> </span>the <span class="_ _1"> </span>client’<span class="_ _0"></span>s </div><div class="t m0 x0 h4 y57 ff2 fs1 fc0 sc0 ls3 ws0">problem. <span class="_ _3"> </span>The <span class="_ _3"> </span>class <span class="_ _3"> </span>instructor <span class="_ _3"> </span>acts <span class="_ _3"> </span>to <span class="_ _3"> </span>facilitate <span class="_ _a"> </span>communication <span class="_ _3"> </span>between <span class="_ _3"> </span>the <span class="_ _3"> </span>students</div><div class="d m1" style="border-style:none;position:absolute;left:293.112000px;bottom:527.649000px;width:9.963000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div><a class="l" href="#pf5" data-dest-detail='[5,"XYZ",53,165,null]'><div class="d m1" style="border-style:none;position:absolute;left:374.445000px;bottom:432.006000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></a><div class="d m1" style="border-style:none;position:absolute;left:177.822000px;bottom:396.141000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div><div class="d m1" style="border-style:none;position:absolute;left:79.326000px;bottom:228.768000px;width:9.963000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf3" class="pf w0 h0" data-page-no="3"><div class="pc pc3 w0 h0"><div class="t m0 x0 h5 y27 ff2 fs2 fc0 sc0 ls5 ws0">Pedagogical<span class="_ _6"> </span>and<span class="_ _a"> </span>Future<span class="_ _6"> </span>Implications<span class="_ _a"> </span>for<span class="_ _a"> </span>the<span class="_ _6"> </span>Training<span class="_ _6"> </span>of<span class="_ _6"> </span>Data<span class="_ _a"> </span>Translators<span class="_ _f"> </span>187</div><div class="t m0 x0 h4 y28 ff2 fs1 fc0 sc0 ls3 ws0">and <span class="_ _6"> </span>client <span class="_ _b"> </span>by <span class="_ _6"> </span>brokering <span class="_ _b"> </span>knowledge <span class="_ _6"> </span>between <span class="_ _b"> </span>the <span class="_ _6"> </span>stakeholders, <span class="_ _6"> </span>working <span class="_ _b"> </span>with <span class="_ _6"> </span>the <span class="_ _b"> </span>client </div><div class="t m0 x0 h4 y29 ff2 fs1 fc0 sc0 ls2 ws0">to <span class="_ _d"> </span>guide <span class="_ _d"> </span>students <span class="_ _d"> </span>through <span class="_ _d"> </span>the <span class="_ _1"> </span>KE <span class="_ _d"> </span>framew<span class="_ _0"></span>ork. <span class="_ _d"> </span>Students <span class="_ _d"> </span>take <span class="_ _d"> </span>on <span class="_ _d"> </span>different <span class="_ _d"> </span>roles <span class="_ _d"> </span>in </div><div class="t m0 x0 h4 y2a ff2 fs1 fc0 sc0 ls3 ws0">their <span class="_ _8"> </span>team <span class="_ _7"> </span>depending <span class="_ _8"> </span>on <span class="_ _7"> </span>their <span class="_ _8"> </span>background <span class="_ _7"> </span>and <span class="_ _8"> </span>technical <span class="_ _7"> </span>skill <span class="_ _8"> </span>level. <span class="_ _3"> </span>V<span class="_ _4"></span>arious <span class="_ _3"> </span>modes </div><div class="t m0 x0 h4 y2b ff2 fs1 fc0 sc0 ls3 ws0">of <span class="_ _3"> </span>communication <span class="_ _8"> </span>are <span class="_ _8"> </span>practiced <span class="_ _3"> </span>including <span class="_ _8"> </span>email <span class="_ _8"> </span>exchanges, <span class="_ _3"> </span>phone/video <span class="_ _8"> </span>meetings, </div><div class="t m0 x0 h4 y2c ff2 fs1 fc0 sc0 ls2 ws0">progress <span class="_ _1"> </span>reports, <span class="_ _1"> </span>presentations, <span class="_ _1"> </span>and <span class="_ _1"> </span>a <span class="_ _1"> </span>ﬁnal <span class="_ _1"> </span>report; <span class="_ _1"> </span>peer <span class="_ _1"> </span>feedback <span class="_ _e"> </span>is <span class="_ _1"> </span>also <span class="_ _1"> </span>used <span class="_ _1"> </span>to </div><div class="t m0 x0 h4 y2d ff2 fs1 fc0 sc0 ls2 ws0">encourage <span class="_ _9"> </span>the <span class="_ _d"> </span>sharing <span class="_ _9"> </span>of <span class="_ _9"> </span>multiple <span class="_ _d"> </span>perspecti<span class="_ _0"></span>ves <span class="_ _7"> </span>and <span class="_ _d"> </span>de<span class="_ _0"></span>velop <span class="_ _9"> </span>the <span class="_ _9"> </span>ability <span class="_ _d"> </span>to <span class="_ _9"> </span>provide </div><div class="t m0 x0 h4 y2e ff2 fs1 fc0 sc0 ls3 ws0">constructiv<span class="_ _0"></span>e <span class="_ _8"> </span>criticism. <span class="_ _7"> </span>Such <span class="_ _7"> </span>an <span class="_ _7"> </span>active <span class="_ _8"> </span>learning <span class="_ _7"> </span>approach <span class="_ _7"> </span>provides <span class="_ _8"> </span>students <span class="_ _7"> </span>with <span class="_ _7"> </span>an </div><div class="t m0 x0 h4 y58 ff2 fs1 fc0 sc0 ls2 ws0">opportunity <span class="_ _3"> </span>to <span class="_ _3"> </span>not <span class="_ _3"> </span>only <span class="_ _3"> </span>practice <span class="_ _3"> </span>essential <span class="_ _3"> </span>skills <span class="_ _3"> </span>necessary <span class="_ _3"> </span>for <span class="_ _3"> </span>data <span class="_ _3"> </span>analysis, <span class="_ _3"> </span>but <span class="_ _a"> </span>also </div><div class="t m0 x0 h4 y59 ff2 fs1 fc0 sc0 ls2 ws0">to <span class="_ _d"> </span>experience <span class="_ _9"> </span>how <span class="_ _d"> </span>a <span class="_ _d"> </span>KE <span class="_ _d"> </span>frame<span class="_ _0"></span>work <span class="_ _9"> </span>can <span class="_ _d"> </span>guide <span class="_ _d"> </span>them <span class="_ _d"> </span>to <span class="_ _d"> </span>integrate <span class="_ _d"> </span>such <span class="_ _d"> </span>skills <span class="_ _d"> </span>with </div><div class="t m0 x0 h4 y5a ff2 fs1 fc0 sc0 ls3 ws0">behaviours <span class="_ _10"> </span>conduciv<span class="_ _0"></span>e <span class="_ _10"> </span>to <span class="_ _b"> </span>de<span class="_ _0"></span>veloping <span class="_ _10"> </span>mutually <span class="_ _10"> </span>beneﬁcial <span class="_ _b"> </span>relationships <span class="_ _10"> </span>with <span class="_ _b"> </span>clients <span class="_ _10"> </span>and </div><div class="t m0 x0 h4 y5b ff2 fs1 fc0 sc0 ls2 ws0">peers. <span class="_ _a"> </span>Identifying <span class="_ _a"> </span>and <span class="_ _3"> </span>applying <span class="_ _a"> </span>such <span class="_ _a"> </span>a <span class="_ _3"> </span>KE <span class="_ _a"> </span>framework <span class="_ _6"> </span>is <span class="_ _3"> </span>thus <span class="_ _a"> </span>likely <span class="_ _a"> </span>to <span class="_ _a"> </span>be <span class="_ _a"> </span>productive </div><div class="t m0 x0 h4 y5c ff2 fs1 fc0 sc0 ls0 ws0">for <span class="_ _3"> </span>data <span class="_ _3"> </span>translators. </div><div class="t m0 x1 h4 y5d ff2 fs1 fc0 sc0 lsc ws0">T<span class="_ _4"></span>eimourzadeh <span class="_ _d"> </span>and <span class="_ _9"> </span>Kakavand <span class="_ _9"> </span>in <span class="_ _d"> </span>Chap. <span class="_ _d"> </span><span class="fc1 ls0">7 <span class="_ _9"> </span></span><span class="ls3">present <span class="_ _d"> </span>a <span class="_ _d"> </span>staged <span class="_ _d"> </span>process <span class="_ _d"> </span>for <span class="_ _9"> </span>students </span></div><div class="t m0 x0 h4 y5e ff2 fs1 fc0 sc0 ls2 ws0">to <span class="_ _1"> </span>learn <span class="_ _1"> </span>how <span class="_ _d"> </span>to <span class="_ _e"> </span>deﬁne <span class="_ _1"> </span>and <span class="_ _1"> </span>address <span class="_ _e"> </span>a <span class="_ _1"> </span>business <span class="_ _d"> </span>problem <span class="_ _e"> </span>using <span class="_ _1"> </span>data. <span class="_ _1"> </span>The <span class="_ _1"> </span>“frame-</div><div class="t m0 x0 h4 y5f ff2 fs1 fc0 sc0 ls2 ws0">work” <span class="_ _d"> </span>for <span class="_ _d"> </span>this <span class="_ _d"> </span>staged <span class="_ _d"> </span>process <span class="_ _d"> </span>is <span class="_ _1"> </span>the <span class="_ _d"> </span>data <span class="_ _d"> </span>analytics <span class="_ _d"> </span>workﬂow <span class="_ _d"> </span>with <span class="_ _d"> </span>students <span class="_ _d"> </span>using </div><div class="t m0 x0 h4 y60 ff2 fs1 fc0 sc0 ls2 ws0">two <span class="_ _9"> </span>T<span class="_ _4"></span>ableau <span class="_ _9"> </span>apps <span class="_ _9"> </span>to <span class="_ _9"> </span>develop <span class="_ _7"> </span>data <span class="_ _9"> </span>literacy <span class="_ _9"> </span>and <span class="_ _d"> </span>data <span class="_ _9"> </span>translation <span class="_ _9"> </span>skills. <span class="_ _9"> </span>The <span class="_ _d"> </span>authors </div><div class="t m0 x0 h4 y61 ff2 fs1 fc0 sc0 ls2 ws0">describe <span class="_ _8"> </span>an <span class="_ _7"> </span>“experiential” <span class="_ _8"> </span>learning <span class="_ _7"> </span>approach <span class="_ _7"> </span>in <span class="_ _7"> </span>which <span class="_ _7"> </span>students <span class="_ _8"> </span>practice—as <span class="_ _7"> </span>in <span class="_ _7"> </span>the </div><div class="t m0 x0 h4 y62 ff2 fs1 fc0 sc0 ls3 ws0">activ<span class="_ _0"></span>e <span class="_ _a"> </span>learning <span class="_ _a"> </span>approach <span class="_ _3"> </span>described <span class="_ _a"> </span>by <span class="_ _3"> </span>McFayden <span class="_ _a"> </span>et <span class="_ _a"> </span>al. <span class="_ _3"> </span>–the <span class="_ _a"> </span>skills <span class="_ _3"> </span>necessary <span class="_ _a"> </span>for <span class="_ _3"> </span>real </div><div class="t m0 x0 h4 y63 ff2 fs1 fc0 sc0 ls2 ws0">world <span class="_ _a"> </span>use. <span class="_ _3"> </span>Instructors <span class="_ _3"> </span>are <span class="_ _3"> </span>provided <span class="_ _3"> </span>with <span class="_ _3"> </span>a <span class="_ _3"> </span>step-by-step <span class="_ _3"> </span>plan <span class="_ _3"> </span>that <span class="_ _3"> </span>focuses <span class="_ _3"> </span>on <span class="_ _3"> </span>helping </div><div class="t m0 x0 h4 y64 ff2 fs1 fc0 sc0 ls2 ws0">students <span class="_ _d"> </span>use <span class="_ _d"> </span>freely <span class="_ _d"> </span>av<span class="_ _0"></span>ailable <span class="_ _d"> </span>software <span class="_ _d"> </span>apps <span class="_ _d"> </span>to <span class="_ _d"> </span>move <span class="_ _d"> </span>through <span class="_ _d"> </span>six <span class="_ _d"> </span>stages <span class="_ _d"> </span>of <span class="_ _d"> </span>a <span class="_ _d"> </span>data </div><div class="t m0 x0 h4 y65 ff2 fs1 fc0 sc0 ls3 ws0">analytics <span class="_ _8"> </span>workﬂo<span class="_ _0"></span>w<span class="_ _4"></span>, <span class="_ _8"> </span>from <span class="_ _8"> </span>identiﬁcation <span class="_ _8"> </span>of <span class="_ _8"> </span>a <span class="_ _8"> </span>business <span class="_ _8"> </span>problem, <span class="_ _8"> </span>through <span class="_ _8"> </span>data <span class="_ _8"> </span>collec-</div><div class="t m0 x0 h4 y66 ff2 fs1 fc0 sc0 ls2 ws0">tion, <span class="_ _3"> </span>processing, <span class="_ _3"> </span>analysis, <span class="_ _8"> </span>and <span class="_ _3"> </span>visualization, <span class="_ _3"> </span>to <span class="_ _8"> </span>data <span class="_ _3"> </span>translation. <span class="_ _3"> </span>This <span class="_ _8"> </span>approach <span class="_ _3"> </span>may </div><div class="t m0 x0 h4 y67 ff2 fs1 fc0 sc0 ls2 ws0">be <span class="_ _a"> </span>particularly <span class="_ _a"> </span>helpful <span class="_ _a"> </span>for <span class="_ _a"> </span>students <span class="_ _3"> </span>with <span class="_ _a"> </span>little <span class="_ _a"> </span>background <span class="_ _a"> </span>in <span class="_ _a"> </span>data <span class="_ _3"> </span>analysis <span class="_ _a"> </span>because <span class="_ _a"> </span>it </div><div class="t m0 x0 h4 y68 ff2 fs1 fc0 sc0 ls2 ws0">presents <span class="_ _6"> </span>them <span class="_ _6"> </span>with <span class="_ _a"> </span>a <span class="_ _6"> </span>framework <span class="_ _b"> </span>for <span class="_ _a"> </span>their <span class="_ _6"> </span>activities <span class="_ _6"> </span>that <span class="_ _6"> </span>they <span class="_ _6"> </span>can <span class="_ _6"> </span>apply <span class="_ _a"> </span>across <span class="_ _6"> </span>a <span class="_ _6"> </span>range </div><div class="t m0 x0 h4 y69 ff2 fs1 fc0 sc0 ls2 ws0">of <span class="_ _3"> </span>possible <span class="_ _3"> </span>contexts <span class="_ _a"> </span>as <span class="_ _3"> </span>well <span class="_ _3"> </span>as <span class="_ _3"> </span>experience <span class="_ _3"> </span>in <span class="_ _3"> </span>applying <span class="_ _3"> </span>this <span class="_ _a"> </span>framework. </div><div class="t m0 x1 h4 y6a ff2 fs1 fc0 sc0 ls2 ws0">Finally<span class="_ _4"></span>, <span class="_ _a"> </span>the <span class="_ _3"> </span>third <span class="_ _a"> </span>factor <span class="_ _a"> </span>identiﬁed <span class="_ _3"> </span>in <span class="_ _a"> </span>these <span class="_ _a"> </span>chapters’ <span class="_ _3"> </span>case <span class="_ _a"> </span>studies <span class="_ _3"> </span>is <span class="_ _a"> </span>language <span class="_ _3"> </span>cali-</div><div class="t m0 x0 h4 y6b ff2 fs1 fc0 sc0 ls3 ws0">bration, <span class="_ _a"> </span>namely <span class="_ _3"> </span>the <span class="_ _3"> </span>attention <span class="_ _a"> </span>to <span class="_ _3"> </span>language <span class="_ _3"> </span>in <span class="_ _a"> </span>ﬂexible <span class="_ _3"> </span>ways <span class="_ _a"> </span>to <span class="_ _3"> </span>carry <span class="_ _a"> </span>out <span class="_ _3"> </span>effecti<span class="_ _0"></span>ve <span class="_ _a"> </span>data </div><div class="t m0 x0 h4 y6c ff2 fs1 fc0 sc0 ls3 ws0">translation <span class="_ _3"> </span>between <span class="_ _3"> </span>participants. <span class="_ _3"> </span>Zwiers <span class="_ _3"> </span>and <span class="_ _3"> </span>Zhang’<span class="_ _0"></span>s <span class="_ _a"> </span>Chap. </div><div class="t m0 x5 h4 y6d ff2 fs1 fc1 sc0 ls0 ws0">1 <span class="_ _3"> </span><span class="fc0 ls2">discusses <span class="_ _3"> </span>the <span class="_ _3"> </span>calibra-</span></div><div class="t m0 x0 h4 y6e ff2 fs1 fc0 sc0 ls3 ws0">tion <span class="_ _9"> </span>of <span class="_ _d"> </span>language <span class="_ _d"> </span>related <span class="_ _d"> </span>to <span class="_ _9"> </span>climate <span class="_ _d"> </span>change <span class="_ _d"> </span>by <span class="_ _9"> </span>an <span class="_ _d"> </span>intergo<span class="_ _0"></span>vernmental <span class="_ _9"> </span>organization, </div><div class="t m0 x0 h4 y6f ff2 fs1 fc0 sc0 ls3 ws0">and <span class="_ _3"> </span>shows <span class="_ _a"> </span>how <span class="_ _3"> </span>such <span class="_ _3"> </span>development <span class="_ _a"> </span>of <span class="_ _8"> </span>consistency <span class="_ _3"> </span>in <span class="_ _3"> </span>use <span class="_ _3"> </span>of <span class="_ _8"> </span>calibrated <span class="_ _3"> </span>terms <span class="_ _3"> </span>enables </div><div class="t m0 x0 h4 y70 ff2 fs1 fc0 sc0 ls2 ws0">conﬁdence <span class="_ _a"> </span>in <span class="_ _a"> </span>users <span class="_ _a"> </span>and <span class="_ _a"> </span>an <span class="_ _3"> </span>ability <span class="_ _a"> </span>to <span class="_ _a"> </span>demonstrate <span class="_ _a"> </span>progress <span class="_ _a"> </span>over <span class="_ _6"> </span>time. <span class="_ _3"> </span>They <span class="_ _6"> </span>describe, </div><div class="t m0 x0 h4 y71 ff2 fs1 fc0 sc0 ls2 ws0">for <span class="_ _8"> </span>instance, <span class="_ _8"> </span>how <span class="_ _3"> </span>specifying <span class="_ _8"> </span>the <span class="_ _8"> </span>probability <span class="_ _8"> </span>related <span class="_ _8"> </span>to <span class="_ _8"> </span>various <span class="_ _3"> </span>terms <span class="_ _8"> </span>(e.g., <span class="_ _8"> </span><span class="ff4 ls0">virtually </span></div><div class="t m0 x0 h4 y72 ff4 fs1 fc0 sc0 ls0 ws0">certain<span class="_ _0"></span><span class="ff2">, <span class="_ _6"> </span><span class="ff4 lsd">likely<span class="_ _0"></span><span class="ff2 ls0">, <span class="_ _6"> </span><span class="ff4 ls2">very <span class="_ _6"> </span>unlikely</span><span class="ls3">) <span class="_ _6"> </span>has <span class="_ _a"> </span>enabled <span class="_ _6"> </span>stronger <span class="_ _6"> </span>claims <span class="_ _6"> </span>to <span class="_ _a"> </span>be <span class="_ _6"> </span>stated <span class="_ _6"> </span>about <span class="_ _6"> </span>scientiﬁc </span></span></span></span></div><div class="t m0 x0 h4 y73 ff2 fs1 fc0 sc0 ls3 ws0">conclusions. <span class="_ _10"> </span>Most <span class="_ _b"> </span>signiﬁcantly<span class="_ _4"></span>, <span class="_ _b"> </span>such <span class="_ _10"> </span>attention <span class="_ _b"> </span>to <span class="_ _10"> </span>clear <span class="_ _b"> </span>communication <span class="_ _10"> </span>through <span class="_ _b"> </span>de<span class="_ _0"></span>vel-</div><div class="t m0 x0 h4 y74 ff2 fs1 fc0 sc0 ls2 ws0">opment <span class="_ _8"> </span>of <span class="_ _3"> </span>consistent, <span class="_ _8"> </span>calibrated <span class="_ _8"> </span>terminology <span class="_ _8"> </span>provides <span class="_ _8"> </span>policy <span class="_ _3"> </span>makers <span class="_ _3"> </span>and <span class="_ _8"> </span>scientists </div><div class="t m0 x0 h4 y75 ff2 fs1 fc0 sc0 ls3 ws0">a <span class="_ _8"> </span>tool <span class="_ _8"> </span>to <span class="_ _8"> </span>share <span class="_ _8"> </span>information <span class="_ _7"> </span>on <span class="_ _8"> </span>climate <span class="_ _8"> </span>change <span class="_ _8"> </span>with <span class="_ _7"> </span>conﬁdence <span class="_ _8"> </span>that <span class="_ _8"> </span>uncertainties <span class="_ _7"> </span>in </div><div class="t m0 x0 h4 y76 ff2 fs1 fc0 sc0 ls3 ws0">meaning <span class="_ _a"> </span>are <span class="_ _a"> </span>minimized. <span class="_ _a"> </span>The <span class="_ _a"> </span>pedagogical <span class="_ _a"> </span>implications <span class="_ _a"> </span>of <span class="_ _a"> </span>this <span class="_ _a"> </span>work <span class="_ _a"> </span>include <span class="_ _a"> </span>drawing </div><div class="t m0 x0 h4 y77 ff2 fs1 fc0 sc0 ls2 ws0">students’ <span class="_ _3"> </span>attention <span class="_ _8"> </span>to <span class="_ _3"> </span>the <span class="_ _8"> </span>value <span class="_ _3"> </span>that <span class="_ _3"> </span>data <span class="_ _8"> </span>translators <span class="_ _8"> </span>must <span class="_ _3"> </span>place <span class="_ _8"> </span>on <span class="_ _8"> </span>precise <span class="_ _3"> </span>language </div><div class="t m0 x0 h4 y78 ff2 fs1 fc0 sc0 ls3 ws0">and <span class="_ _d"> </span>the <span class="_ _d"> </span>internal <span class="_ _1"> </span>v<span class="_ _0"></span>alues <span class="_ _d"> </span>of <span class="_ _d"> </span>a <span class="_ _1"> </span>discipline <span class="_ _d"> </span>or <span class="_ _d"> </span>organization. <span class="_ _d"> </span>In <span class="_ _d"> </span>this <span class="_ _d"> </span>case, <span class="_ _1"> </span>the <span class="_ _d"> </span>need <span class="_ _d"> </span>for </div><div class="t m0 x0 h4 y79 ff2 fs1 fc0 sc0 ls2 ws0">climate <span class="_ _3"> </span>scientists <span class="_ _3"> </span>and <span class="_ _3"> </span>organizations <span class="_ _3"> </span>to <span class="_ _3"> </span>avoid <span class="_ _a"> </span>confusion <span class="_ _3"> </span>and <span class="_ _8"> </span>emphasize <span class="_ _3"> </span>consensus <span class="_ _3"> </span>is </div><div class="t m0 x0 h4 y7a ff2 fs1 fc0 sc0 ls2 ws0">necessary <span class="_ _8"> </span>to <span class="_ _8"> </span>av<span class="_ _0"></span>oid <span class="_ _8"> </span>attacks <span class="_ _8"> </span>on <span class="_ _8"> </span>their <span class="_ _7"> </span>credibility <span class="_ _8"> </span>in <span class="_ _8"> </span>the <span class="_ _8"> </span>contentious <span class="_ _7"> </span>context <span class="_ _3"> </span>of <span class="_ _7"> </span>climate </div><div class="t m0 x0 h4 y7b ff2 fs1 fc0 sc0 lsc ws0">change <span class="_ _3"> </span>debates. </div><div class="t m0 x1 h4 y55 ff2 fs1 fc0 sc0 lsc ws0">Falconer <span class="_ _6"> </span>takes <span class="_ _a"> </span>a <span class="_ _a"> </span>wider <span class="_ _a"> </span>vie<span class="_ _0"></span>w <span class="_ _a"> </span>on <span class="_ _a"> </span>language <span class="_ _a"> </span>in <span class="_ _a"> </span>Chap. <span class="_ _a"> </span><span class="fc1">11</span><span class="ls2">, <span class="_ _a"> </span>focusing <span class="_ _a"> </span>on <span class="_ _6"> </span>identifying <span class="_ _a"> </span>the </span></div><div class="t m0 x0 h4 y56 ff2 fs1 fc0 sc0 ls3 ws0">rhetorical <span class="_ _10"> </span>strategies <span class="_ _b"> </span>used <span class="_ _10"> </span>when <span class="_ _b"> </span>data <span class="_ _10"> </span>created <span class="_ _b"> </span>in <span class="_ _b"> </span>one <span class="_ _10"> </span>context <span class="_ _10"> </span>is <span class="_ _b"> </span>taken <span class="_ _10"> </span>up <span class="_ _b"> </span>and <span class="_ _10"> </span>transformed </div><div class="t m0 x0 h4 y57 ff2 fs1 fc0 sc0 ls3 ws0">for <span class="_ _3"> </span>use <span class="_ _3"> </span>in <span class="_ _3"> </span>another <span class="_ _3"> </span>domain. <span class="_ _8"> </span>By <span class="_ _3"> </span>distinguishing <span class="_ _3"> </span>between <span class="_ _3"> </span>recontextualizing <span class="_ _3"> </span>knowledge</div><div class="d m1" style="border-style:none;position:absolute;left:225.918000px;bottom:455.919000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div><div class="d m1" style="border-style:none;position:absolute;left:293.040000px;bottom:276.585000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div><div class="d m1" style="border-style:none;position:absolute;left:263.817000px;bottom:97.260000px;width:9.963000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf4" class="pf w0 h0" data-page-no="4"><div class="pc pc4 w0 h0"><div class="t m0 x0 h5 y27 ff2 fs2 fc0 sc0 ls0 ws0">188<span class="_ _c"> </span>B.<span class="_ _6"> </span>Samuels<span class="_ _a"> </span>et<span class="_ _6"> </span>al.</div><div class="t m0 x0 h4 y28 ff2 fs1 fc0 sc0 ls2 ws0">and <span class="_ _7"> </span>data <span class="_ _9"> </span>translation, <span class="_ _9"> </span>with <span class="_ _9"> </span>the <span class="_ _7"> </span>f ormer <span class="_ _9"> </span>describing <span class="_ _9"> </span>a <span class="_ _9"> </span>process <span class="_ _9"> </span>of <span class="_ _7"> </span>transforming <span class="_ _9"> </span>knowl-</div><div class="t m0 x0 h4 y29 ff2 fs1 fc0 sc0 ls3 ws0">edge <span class="_ _3"> </span>or <span class="_ _3"> </span>data <span class="_ _8"> </span>from <span class="_ _3"> </span>one <span class="_ _8"> </span>form <span class="_ _3"> </span>to <span class="_ _8"> </span>another<span class="_ _0"></span>, <span class="_ _3"> </span>while <span class="_ _3"> </span>the <span class="_ _8"> </span>latter <span class="_ _3"> </span>refers <span class="_ _3"> </span>t o <span class="_ _8"> </span>making <span class="_ _3"> </span>knowledge </div><div class="t m0 x0 h4 y2a ff2 fs1 fc0 sc0 ls2 ws0">accessible <span class="_ _7"> </span>(i.e., <span class="_ _7"> </span>translated) <span class="_ _9"> </span>for <span class="_ _7"> </span>different <span class="_ _8"> </span>audiences <span class="_ _9"> </span>for <span class="_ _7"> </span>different <span class="_ _8"> </span>purposes, <span class="_ _9"> </span>Falconer </div><div class="t m0 x0 h4 y2b ff2 fs1 fc0 sc0 ls2 ws0">describes <span class="_ _b"> </span>how <span class="_ _10"> </span>multidisciplinary <span class="_ _b"> </span>and <span class="_ _6"> </span>multisectoral <span class="_ _b"> </span>panels <span class="_ _b"> </span>transform <span class="_ _b"> </span>scientiﬁc <span class="_ _b"> </span>data <span class="_ _b"> </span>for </div><div class="t m0 x0 h4 y2c ff2 fs1 fc0 sc0 ls3 ws0">use <span class="_ _3"> </span>by <span class="_ _a"> </span>governmental <span class="_ _a"> </span>departments <span class="_ _3"> </span>for <span class="_ _3"> </span>the <span class="_ _3"> </span>purposes <span class="_ _3"> </span>of <span class="_ _3"> </span>policy <span class="_ _a"> </span>development. <span class="_ _a"> </span>Falconer </div><div class="t m0 x0 h4 y2d ff2 fs1 fc0 sc0 ls3 ws0">identiﬁes <span class="_ _b"> </span>strate<span class="_ _0"></span>gies <span class="_ _b"> </span>including <span class="_ _10"> </span>the <span class="_ _b"> </span>visual <span class="_ _b"> </span>representation <span class="_ _10"> </span>of <span class="_ _b"> </span>people, <span class="_ _b"> </span>numerical <span class="_ _10"> </span>represen-</div><div class="t m0 x0 h4 y2e ff2 fs1 fc0 sc0 ls3 ws0">tations, <span class="_ _a"> </span>and <span class="_ _a"> </span>written <span class="_ _a"> </span>explanations <span class="_ _6"> </span>as <span class="_ _a"> </span>some <span class="_ _a"> </span>of <span class="_ _a"> </span>the <span class="_ _a"> </span>means <span class="_ _a"> </span>by <span class="_ _a"> </span>which <span class="_ _a"> </span>data <span class="_ _a"> </span>is <span class="_ _a"> </span>transformed </div><div class="t m0 x0 h4 y58 ff2 fs1 fc0 sc0 ls3 ws0">for <span class="_ _6"> </span>later <span class="_ _6"> </span>use. <span class="_ _6"> </span>In <span class="_ _6"> </span>the <span class="_ _6"> </span>classroom, <span class="_ _6"> </span>these <span class="_ _6"> </span>strategies <span class="_ _b"> </span>can <span class="_ _6"> </span>be <span class="_ _6"> </span>identiﬁed, <span class="_ _6"> </span>analysed, <span class="_ _6"> </span>and <span class="_ _6"> </span>taught </div><div class="t m0 x0 h4 y59 ff2 fs1 fc0 sc0 ls3 ws0">to <span class="_ _3"> </span>students <span class="_ _3"> </span>who <span class="_ _3"> </span>en<span class="_ _0"></span>vision <span class="_ _a"> </span>themselves <span class="_ _3"> </span>in <span class="_ _3"> </span>roles <span class="_ _3"> </span>doing <span class="_ _3"> </span>such <span class="_ _3"> </span>“boundary <span class="_ _3"> </span>work.” </div><div class="t m0 x1 h4 y7c ff2 fs1 fc0 sc0 ls3 ws0">These <span class="_ _8"> </span>three <span class="_ _7"> </span>factors—interdisciplinarity<span class="_ _4"></span>, <span class="_ _7"> </span>a <span class="_ _8"> </span>knowledge <span class="_ _8"> </span>exchange <span class="_ _7"> </span>framew<span class="_ _0"></span>ork, <span class="_ _8"> </span>and </div><div class="t m0 x0 h4 y7d ff2 fs1 fc0 sc0 ls3 ws0">language <span class="_ _e"> </span>calibration—necessary <span class="_ _11"> </span>for <span class="_ _e"> </span>effecti<span class="_ _0"></span>vely <span class="_ _e"> </span>teaching <span class="_ _e"> </span>people <span class="_ _11"> </span>to <span class="_ _e"> </span>become <span class="_ _11"> </span>data </div><div class="t m0 x0 h4 y7e ff2 fs1 fc0 sc0 ls2 ws0">translators <span class="_ _d"> </span>reﬂect <span class="_ _d"> </span>issues <span class="_ _d"> </span>familiar <span class="_ _d"> </span>to <span class="_ _d"> </span>writing <span class="_ _d"> </span>instructors <span class="_ _d"> </span>working <span class="_ _9"> </span>to <span class="_ _d"> </span>teach <span class="_ _1"> </span>students </div><div class="t m0 x0 h4 y7f ff2 fs1 fc0 sc0 ls2 ws0">ho<span class="_ _0"></span>w <span class="_ _d"> </span>to <span class="_ _d"> </span>write <span class="_ _9"> </span>in <span class="_ _d"> </span>the <span class="_ _d"> </span>disciplines. <span class="_ _d"> </span>A <span class="_ _9"> </span>well <span class="_ _d"> </span>explored <span class="_ _d"> </span>concern, <span class="_ _9"> </span>for <span class="_ _d"> </span>instance, <span class="_ _d"> </span>is <span class="_ _d"> </span>ho<span class="_ _0"></span>w <span class="_ _d"> </span>to </div><div class="t m0 x0 h4 y80 ff2 fs1 fc0 sc0 ls3 ws0">enculturate <span class="_ _8"> </span>novice <span class="_ _7"> </span>students <span class="_ _8"> </span>to <span class="_ _7"> </span>a <span class="_ _7"> </span>discipline <span class="_ _7"> </span>so <span class="_ _8"> </span>they <span class="_ _7"> </span>can <span class="_ _8"> </span>increasingly <span class="_ _7"> </span>participate <span class="_ _7"> </span>and </div><div class="t m0 x0 h4 y81 ff2 fs1 fc0 sc0 ls3 ws0">be <span class="_ _8"> </span>seen <span class="_ _7"> </span>as <span class="_ _8"> </span>legitimate <span class="_ _8"> </span>actors <span class="_ _7"> </span>within <span class="_ _7"> </span>that <span class="_ _8"> </span>discipline. <span class="_ _7"> </span>For <span class="_ _8"> </span>example, <span class="_ _8"> </span>how <span class="_ _8"> </span>can <span class="_ _8"> </span>we <span class="_ _7"> </span>teach </div><div class="t m0 x0 h4 y82 ff2 fs1 fc0 sc0 ls2 ws0">students <span class="_ _d"> </span>to <span class="_ _d"> </span>think <span class="_ _d"> </span>and <span class="_ _d"> </span>write <span class="_ _d"> </span>like <span class="_ _9"> </span>a <span class="_ _d"> </span>scientist? <span class="_ _d"> </span>For <span class="_ _d"> </span>students <span class="_ _d"> </span>ne<span class="_ _0"></span>w <span class="_ _d"> </span>to <span class="_ _d"> </span>a <span class="_ _d"> </span>discipline, <span class="_ _d"> </span>the </div><div class="t m0 x0 h4 y83 ff2 fs1 fc0 sc0 ls3 ws0">con<span class="_ _0"></span>ventions, <span class="_ _b"> </span>genres, <span class="_ _a"> </span>language, <span class="_ _6"> </span>and <span class="_ _6"> </span>values <span class="_ _6"> </span>of <span class="_ _6"> </span>that <span class="_ _6"> </span>discipline <span class="_ _6"> </span>are <span class="_ _a"> </span>largely <span class="_ _6"> </span>unkno<span class="_ _0"></span>wn <span class="_ _6"> </span>and </div><div class="t m0 x0 h4 y84 ff2 fs1 fc0 sc0 ls2 ws0">in<span class="_ _0"></span>visible. <span class="_ _9"> </span>Making <span class="_ _d"> </span>such <span class="_ _d"> </span>disciplinary <span class="_ _d"> </span>elements <span class="_ _9"> </span>visible <span class="_ _d"> </span>and <span class="_ _d"> </span>enabling <span class="_ _9"> </span>practice <span class="_ _d"> </span>to <span class="_ _d"> </span>use </div><div class="t m0 x0 h4 y85 ff2 fs1 fc0 sc0 ls2 ws0">these <span class="_ _a"> </span>elements <span class="_ _3"> </span>incrementally <span class="_ _3"> </span>and <span class="_ _a"> </span>appropriately <span class="_ _3"> </span>allows <span class="_ _a"> </span>students <span class="_ _a"> </span>to <span class="_ _3"> </span>begin <span class="_ _a"> </span>identifying </div><div class="t m0 x0 h4 y86 ff2 fs1 fc0 sc0 ls2 ws0">as <span class="_ _8"> </span>disciplinary <span class="_ _8"> </span>insiders, <span class="_ _7"> </span>a <span class="_ _8"> </span>process <span class="_ _7"> </span>known <span class="_ _3"> </span>as <span class="_ _7"> </span>legitimate <span class="_ _8"> </span>peripheral <span class="_ _8"> </span>participation <span class="_ _8"> </span>[</div><div class="t m0 x6 h4 y87 ff2 fs1 fc1 sc0 ls0 ws0">8</div><div class="t m0 x8 h4 y88 ff2 fs1 fc0 sc0 lsb ws0">]. </div><div class="t m0 x0 h4 y89 ff2 fs1 fc0 sc0 ls2 ws0">This <span class="_ _a"> </span>process <span class="_ _a"> </span>is <span class="_ _a"> </span>relev<span class="_ _4"></span>ant <span class="_ _a"> </span>not <span class="_ _3"> </span>only <span class="_ _a"> </span>to <span class="_ _a"> </span>novice <span class="_ _6"> </span>students, <span class="_ _a"> </span>but <span class="_ _6"> </span>to <span class="_ _a"> </span>those <span class="_ _a"> </span>who <span class="_ _3"> </span>are <span class="_ _a"> </span>established </div><div class="t m0 x0 h4 y8a ff2 fs1 fc0 sc0 ls2 ws0">within <span class="_ _a"> </span>disciplines <span class="_ _3"> </span>and <span class="_ _3"> </span>who <span class="_ _a"> </span>now <span class="_ _a"> </span>must <span class="_ _3"> </span>interact <span class="_ _3"> </span>with <span class="_ _a"> </span>and <span class="_ _3"> </span>adjust <span class="_ _3"> </span>to <span class="_ _3"> </span>other <span class="_ _a"> </span>disciplines <span class="_ _3"> </span>to </div><div class="t m0 x0 h4 y8b ff2 fs1 fc0 sc0 ls3 ws0">take <span class="_ _a"> </span>advantage <span class="_ _a"> </span>of <span class="_ _3"> </span>the <span class="_ _3"> </span>expanded <span class="_ _3"> </span>opportunities <span class="_ _3"> </span>av<span class="_ _0"></span>ailable <span class="_ _3"> </span>through <span class="_ _3"> </span>interdisciplinarity<span class="_ _4"></span>. </div><div class="t m0 x1 h4 y8c ff2 fs1 fc0 sc0 ls2 ws0">This <span class="_ _a"> </span>discussion <span class="_ _6"> </span>of <span class="_ _a"> </span>conv<span class="_ _0"></span>entions, <span class="_ _6"> </span>genres, <span class="_ _a"> </span>values, <span class="_ _6"> </span>and <span class="_ _a"> </span>participation <span class="_ _a"> </span>in <span class="_ _a"> </span>a <span class="_ _a"> </span>disciplinary </div><div class="t m0 x0 h4 y8d ff2 fs1 fc0 sc0 ls2 ws0">community <span class="_ _e"> </span>is <span class="_ _e"> </span>central <span class="_ _e"> </span>to <span class="_ _e"> </span>the <span class="_ _e"> </span>issue <span class="_ _e"> </span>of <span class="_ _e"> </span>how <span class="_ _e"> </span>to <span class="_ _e"> </span>become <span class="_ _e"> </span>a <span class="_ _e"> </span>data <span class="_ _e"> </span>translator<span class="_ _0"></span>. <span class="_ _1"> </span>Being <span class="_ _11"> </span>a </div><div class="t m0 x0 h4 y8e ff2 fs1 fc0 sc0 ls3 ws0">data <span class="_ _7"> </span>translator <span class="_ _7"> </span>requires <span class="_ _9"> </span>that <span class="_ _7"> </span>individuals <span class="_ _7"> </span>participate <span class="_ _7"> </span>and <span class="_ _9"> </span>are <span class="_ _7"> </span>perceived <span class="_ _8"> </span>as <span class="_ _9"> </span>legitimate </div><div class="t m0 x0 h4 y8f ff2 fs1 fc0 sc0 ls2 ws0">actors <span class="_ _9"> </span>within <span class="_ _d"> </span>that <span class="_ _9"> </span>discipline, <span class="_ _9"> </span>not <span class="_ _d"> </span>as <span class="_ _9"> </span>outsiders. <span class="_ _9"> </span>Providing <span class="_ _9"> </span>students <span class="_ _9"> </span>with <span class="_ _d"> </span>experience </div><div class="t m0 x0 h4 y90 ff2 fs1 fc0 sc0 ls3 ws0">conducting <span class="_ _3"> </span>data <span class="_ _8"> </span>analyses <span class="_ _8"> </span>using <span class="_ _8"> </span>authentic <span class="_ _3"> </span>data <span class="_ _8"> </span>and <span class="_ _8"> </span>then <span class="_ _8"> </span>translating <span class="_ _3"> </span>that <span class="_ _8"> </span>data <span class="_ _8"> </span>for <span class="_ _8"> </span>use </div><div class="t m0 x0 h4 y91 ff2 fs1 fc0 sc0 ls2 ws0">within <span class="_ _a"> </span>a <span class="_ _a"> </span>speciﬁc <span class="_ _a"> </span>discipline <span class="_ _a"> </span>to <span class="_ _a"> </span>address <span class="_ _a"> </span>a <span class="_ _a"> </span>discipline-speciﬁc <span class="_ _a"> </span>question <span class="_ _a"> </span>teaches <span class="_ _a"> </span>students </div><div class="t m0 x0 h4 y92 ff2 fs1 fc0 sc0 ls3 ws0">about <span class="_ _7"> </span>the <span class="_ _9"> </span>con<span class="_ _0"></span>ventions <span class="_ _7"> </span>that <span class="_ _7"> </span>must <span class="_ _9"> </span>be <span class="_ _7"> </span>followed, <span class="_ _7"> </span>the <span class="_ _9"> </span>genres <span class="_ _7"> </span>that <span class="_ _9"> </span>are <span class="_ _9"> </span>possible, <span class="_ _7"> </span>and <span class="_ _9"> </span>the </div><div class="t m0 x0 h4 y93 ff2 fs1 fc0 sc0 ls3 ws0">v<span class="_ _0"></span>alues <span class="_ _a"> </span>that <span class="_ _6"> </span>require <span class="_ _a"> </span>acknowledgment. <span class="_ _6"> </span>Students <span class="_ _a"> </span>thus <span class="_ _a"> </span>learn <span class="_ _a"> </span>what <span class="_ _a"> </span>it <span class="_ _6"> </span>means <span class="_ _a"> </span>to <span class="_ _a"> </span>be <span class="_ _a"> </span>a <span class="_ _6"> </span>disci-</div><div class="t m0 x0 h4 y94 ff2 fs1 fc0 sc0 ls2 ws0">plinary <span class="_ _b"> </span>insider <span class="_ _6"> </span>and <span class="_ _b"> </span>are <span class="_ _6"> </span>therefore <span class="_ _6"> </span>able <span class="_ _b"> </span>to <span class="_ _6"> </span>communicate <span class="_ _b"> </span>appropriately <span class="_ _6"> </span>with <span class="_ _b"> </span>disciplinary </div><div class="t m0 x0 h4 y95 ff2 fs1 fc0 sc0 ls2 ws0">experts. <span class="_ _3"> </span>It <span class="_ _8"> </span>is <span class="_ _8"> </span>this <span class="_ _8"> </span>ability <span class="_ _8"> </span>to <span class="_ _8"> </span>communicate <span class="_ _7"> </span>in <span class="_ _8"> </span>discipline-appropriate <span class="_ _8"> </span>ways <span class="_ _8"> </span>that <span class="_ _8"> </span>makes </div><div class="t m0 x0 h4 y96 ff2 fs1 fc0 sc0 ls0 ws0">them <span class="_ _3"> </span>translators. </div><div class="t m0 x1 h4 y97 ff2 fs1 fc0 sc0 ls3 ws0">T<span class="_ _0"></span>ranslation <span class="_ _6"> </span>is <span class="_ _a"> </span>not <span class="_ _a"> </span>simply <span class="_ _6"> </span>about <span class="_ _a"> </span>participants <span class="_ _a"> </span>speaking <span class="_ _6"> </span>different <span class="_ _6"> </span>“languages”—one </div><div class="t m0 x0 h4 y98 ff2 fs1 fc0 sc0 ls3 ws0">speaking <span class="_ _6"> </span>with <span class="_ _6"> </span>technical <span class="_ _6"> </span>terms <span class="_ _6"> </span>from <span class="_ _6"> </span>data <span class="_ _6"> </span>science <span class="_ _6"> </span>and <span class="_ _6"> </span>analytics <span class="_ _6"> </span>and <span class="_ _6"> </span>one <span class="_ _6"> </span>speaking <span class="_ _6"> </span>with </div><div class="t m0 x0 h4 y99 ff2 fs1 fc0 sc0 ls2 ws0">discipline-speciﬁc <span class="_ _6"> </span>terminology<span class="_ _4"></span>. <span class="_ _6"> </span>Rather, <span class="_ _b"> </span>when <span class="_ _6"> </span>complex <span class="_ _6"> </span>problems <span class="_ _6"> </span>intersect <span class="_ _6"> </span>with <span class="_ _a"> </span>large </div><div class="t m0 x0 h4 y9a ff2 fs1 fc0 sc0 ls3 ws0">and <span class="_ _b"> </span>complex <span class="_ _10"> </span>data <span class="_ _b"> </span>structures, <span class="_ _b"> </span>it <span class="_ _b"> </span>is <span class="_ _b"> </span>likely <span class="_ _b"> </span>that <span class="_ _b"> </span>neither <span class="_ _b"> </span>the <span class="_ _b"> </span>background <span class="_ _b"> </span>knowledge, <span class="_ _10"> </span>skills, </div><div class="t m0 x0 h4 y9b ff2 fs1 fc0 sc0 ls3 ws0">epistemological <span class="_ _a"> </span>values, <span class="_ _6"> </span>nor <span class="_ _a"> </span>vocabulary <span class="_ _6"> </span>of <span class="_ _a"> </span>t he <span class="_ _3"> </span>various <span class="_ _6"> </span>stakeholders <span class="_ _a"> </span>are <span class="_ _a"> </span>aligned, <span class="_ _a"> </span>with </div><div class="t m0 x0 h4 y9c ff2 fs1 fc0 sc0 ls3 ws0">the <span class="_ _10"> </span>result <span class="_ _b"> </span>that <span class="_ _10"> </span>communication <span class="_ _b"> </span>e<span class="_ _0"></span>ven <span class="_ _10"> </span>in <span class="_ _b"> </span>a <span class="_ _10"> </span>common <span class="_ _b"> </span>language <span class="_ _10"> </span>would <span class="_ _10"> </span>be <span class="_ _b"> </span>challenging. <span class="_ _10"> </span>Data </div><div class="t m0 x0 h4 y9d ff2 fs1 fc0 sc0 ls2 ws0">translators <span class="_ _b"> </span>therefore <span class="_ _6"> </span>bring <span class="_ _b"> </span>together <span class="_ _6"> </span>an <span class="_ _b"> </span>immense <span class="_ _6"> </span>variety <span class="_ _b"> </span>of <span class="_ _b"> </span>skills <span class="_ _6"> </span>crucial <span class="_ _b"> </span>to <span class="_ _6"> </span>the <span class="_ _6"> </span>success </div><div class="t m0 x0 h4 y9e ff2 fs1 fc0 sc0 ls3 ws0">of <span class="_ _a"> </span>an <span class="_ _a"> </span>organization <span class="_ _a"> </span>using <span class="_ _a"> </span>data, <span class="_ _a"> </span>including <span class="_ _3"> </span>their <span class="_ _a"> </span>data <span class="_ _a"> </span>analytics <span class="_ _3"> </span>skills, <span class="_ _a"> </span>technical <span class="_ _a"> </span>ﬂuency<span class="_ _4"></span>, </div><div class="t m0 x0 h4 y9f ff2 fs1 fc0 sc0 ls3 ws0">communication <span class="_ _8"> </span>skills, <span class="_ _8"> </span>project <span class="_ _8"> </span>management, <span class="_ _8"> </span>and <span class="_ _8"> </span>an <span class="_ _8"> </span>intimate <span class="_ _8"> </span>knowledge <span class="_ _3"> </span>of <span class="_ _8"> </span>how <span class="_ _3"> </span>the </div><div class="t m0 x0 h4 ya0 ff2 fs1 fc0 sc0 ls3 ws0">data <span class="_ _6"> </span>can <span class="_ _a"> </span>address <span class="_ _6"> </span>organizational <span class="_ _6"> </span>barriers <span class="_ _6"> </span>t o <span class="_ _a"> </span>advance <span class="_ _6"> </span>the <span class="_ _6"> </span>companies’ <span class="_ _a"> </span>or <span class="_ _6"> </span>organizations’ </div><div class="t m0 x0 h4 ya1 ff2 fs1 fc0 sc0 ls0 ws0">interests <span class="_ _3"> </span>[</div><div class="t m0 x9 h4 ya2 ff2 fs1 fc1 sc0 ls0 ws0">6<span class="fc0 lsb">].</span></div><a class="l" href="#pf6" data-dest-detail='[6,"XYZ",53,507,null]'><div class="d m1" style="border-style:none;position:absolute;left:374.445000px;bottom:372.228000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf6" data-dest-detail='[6,"XYZ",53,557,null]'><div class="d m1" style="border-style:none;position:absolute;left:92.592000px;bottom:73.347000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></a></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf5" class="pf w0 h0" data-page-no="5"><div class="pc pc5 w0 h0"><div class="t m0 x0 h5 y27 ff2 fs2 fc0 sc0 ls5 ws0">Pedagogical<span class="_ _6"> </span>and<span class="_ _a"> </span>Future<span class="_ _6"> </span>Implications<span class="_ _a"> </span>for<span class="_ _a"> </span>the<span class="_ _6"> </span>Training<span class="_ _6"> </span>of<span class="_ _6"> </span>Data<span class="_ _a"> </span>Translators<span class="_ _f"> </span>189</div><div class="t m0 x1 h4 y28 ff2 fs1 fc0 sc0 ls2 ws0">Just <span class="_ _7"> </span>as <span class="_ _9"> </span>expert <span class="_ _9"> </span>translators <span class="_ _9"> </span>of <span class="_ _7"> </span>poetry <span class="_ _9"> </span>or <span class="_ _9"> </span>novels <span class="_ _7"> </span>from <span class="_ _9"> </span>one <span class="_ _9"> </span>language <span class="_ _9"> </span>to <span class="_ _9"> </span>another <span class="_ _7"> </span>are </div><div class="t m0 x0 h4 y29 ff2 fs1 fc0 sc0 ls2 ws0">highly <span class="_ _d"> </span>v<span class="_ _0"></span>alued <span class="_ _9"> </span>for <span class="_ _d"> </span>their <span class="_ _d"> </span>insights <span class="_ _9"> </span>into <span class="_ _d"> </span>both <span class="_ _d"> </span>languages <span class="_ _9"> </span>and <span class="_ _d"> </span>both <span class="_ _d"> </span>cultures, <span class="_ _9"> </span>so <span class="_ _d"> </span>too <span class="_ _d"> </span>are </div><div class="t m0 x0 h4 y2a ff2 fs1 fc0 sc0 ls2 ws0">data <span class="_ _9"> </span>translators <span class="_ _7"> </span>increasingly <span class="_ _9"> </span>valued <span class="_ _7"> </span>for <span class="_ _9"> </span>their <span class="_ _9"> </span>ability <span class="_ _9"> </span>to <span class="_ _9"> </span>bridge <span class="_ _9"> </span>differences <span class="_ _7"> </span>between </div><div class="t m0 x0 h4 y2b ff2 fs1 fc0 sc0 ls3 ws0">data <span class="_ _3"> </span>science <span class="_ _8"> </span>and <span class="_ _8"> </span>other <span class="_ _8"> </span>disciplines <span class="_ _8"> </span>or <span class="_ _8"> </span>institutions. <span class="_ _8"> </span>The <span class="_ _3"> </span>speciﬁc <span class="_ _8"> </span>contributions <span class="_ _3"> </span>of <span class="_ _8"> </span>data </div><div class="t m0 x0 h4 y2c ff2 fs1 fc0 sc0 ls3 ws0">translators <span class="_ _7"> </span>hav<span class="_ _0"></span>e <span class="_ _8"> </span>been <span class="_ _9"> </span>noted, <span class="_ _7"> </span>for <span class="_ _7"> </span>instance, <span class="_ _7"> </span>in <span class="_ _7"> </span>the <span class="_ _7"> </span>workplace <span class="_ _8"> </span>[</div><div class="t m0 xa h4 ya3 ff2 fs1 fc1 sc0 ls0 ws0">7<span class="fc0 ls2">]. <span class="_ _7"> </span>For <span class="_ _8"> </span>example, <span class="_ _8"> </span>Marr </span></div><div class="t m0 x0 h4 ya4 ff2 fs1 fc0 sc0 ls2 ws0">(2018), <span class="_ _9"> </span>writing <span class="_ _9"> </span>for <span class="_ _9"> </span>Forbes, <span class="_ _7"> </span>went <span class="_ _9"> </span>so <span class="_ _9"> </span>far <span class="_ _9"> </span>as <span class="_ _9"> </span>to <span class="_ _9"> </span>say <span class="_ _9"> </span>that <span class="_ _9"> </span>due <span class="_ _9"> </span>to <span class="_ _d"> </span>their <span class="_ _7"> </span>ability <span class="_ _9"> </span>to <span class="_ _9"> </span>distill </div><div class="t m0 x0 h4 ya5 ff2 fs1 fc0 sc0 ls2 ws0">complex <span class="_ _10"> </span>information <span class="_ _b"> </span>to <span class="_ _b"> </span>make <span class="_ _10"> </span>it <span class="_ _b"> </span>understandable <span class="_ _b"> </span>to <span class="_ _b"> </span>decision <span class="_ _10"> </span>makers, <span class="_ _b"> </span>employers <span class="_ _b"> </span>should </div><div class="t m0 x0 h4 ya6 ff2 fs1 fc0 sc0 ls0 ws0">hire <span class="_ _3"> </span>data <span class="_ _8"> </span>translators <span class="_ _8"> </span>rather <span class="_ _3"> </span>than <span class="_ _8"> </span>data <span class="_ _8"> </span>scientists. <span class="_ _3"> </span>Data <span class="_ _8"> </span>translators, <span class="_ _3"> </span>in <span class="_ _8"> </span>other <span class="_ _8"> </span>words, <span class="_ _3"> </span>are </div><div class="t m0 x0 h4 ya7 ff2 fs1 fc0 sc0 ls3 ws0">those <span class="_ _a"> </span>who <span class="_ _a"> </span>can <span class="_ _a"> </span>bridge <span class="_ _a"> </span>the <span class="_ _a"> </span>technical-stakeholder <span class="_ _6"> </span>gap <span class="_ _a"> </span>[</div><div class="t m0 xb h4 ya8 ff2 fs1 fc1 sc0 ls0 ws0">9<span class="fc0 ls2">]. <span class="_ _a"> </span>The <span class="_ _a"> </span>hiring <span class="_ _a"> </span>of <span class="_ _a"> </span>those <span class="_ _a"> </span>who <span class="_ _a"> </span>can </span></div><div class="t m0 x0 h4 ya9 ff2 fs1 fc0 sc0 ls2 ws0">tell <span class="_ _3"> </span>stories <span class="_ _3"> </span>with <span class="_ _a"> </span>data <span class="_ _3"> </span>may <span class="_ _3"> </span>thus <span class="_ _3"> </span>make <span class="_ _3"> </span>up <span class="_ _3"> </span>the <span class="_ _3"> </span>next <span class="_ _3"> </span>big <span class="_ _3"> </span>wa<span class="_ _0"></span>ve <span class="_ _a"> </span>of <span class="_ _3"> </span>hiring <span class="_ _3"> </span>[</div><div class="t m0 xc h4 y7c ff2 fs1 fc1 sc0 ls0 ws0">5<span class="fc0 lse">]. </span></div><div class="t m0 x1 h4 yaa ff2 fs1 fc0 sc0 ls2 ws0">While <span class="_ _a"> </span>it <span class="_ _3"> </span>is <span class="_ _a"> </span>too <span class="_ _3"> </span>soon <span class="_ _a"> </span>to <span class="_ _3"> </span>tell <span class="_ _a"> </span>if <span class="_ _3"> </span>such <span class="_ _a"> </span>predictions <span class="_ _3"> </span>prov<span class="_ _0"></span>e <span class="_ _a"> </span>accurate <span class="_ _3"> </span>in <span class="_ _a"> </span>the <span class="_ _3"> </span>workplace, <span class="_ _a"> </span>in </div><div class="t m0 x0 h4 yab ff2 fs1 fc0 sc0 ls2 ws0">the <span class="_ _8"> </span>academy <span class="_ _7"> </span>there <span class="_ _8"> </span>are <span class="_ _7"> </span>increasing <span class="_ _7"> </span>signs <span class="_ _8"> </span>that <span class="_ _7"> </span>the <span class="_ _8"> </span>need <span class="_ _7"> </span>to <span class="_ _7"> </span>disseminate <span class="_ _8"> </span>information <span class="_ _7"> </span>to </div><div class="t m0 x0 h4 yac ff2 fs1 fc0 sc0 ls3 ws0">non-experts <span class="_ _6"> </span>is <span class="_ _a"> </span>well <span class="_ _a"> </span>established <span class="_ _a"> </span>and <span class="_ _a"> </span>growing. <span class="_ _6"> </span>Students <span class="_ _a"> </span>and <span class="_ _a"> </span>scholars <span class="_ _6"> </span>are, <span class="_ _a"> </span>for <span class="_ _a"> </span>instance, </div><div class="t m0 x0 h4 yad ff2 fs1 fc0 sc0 ls3 ws0">increasingly <span class="_ _b"> </span>required <span class="_ _6"> </span>to <span class="_ _b"> </span>write <span class="_ _b"> </span>plain <span class="_ _6"> </span>language <span class="_ _b"> </span>abstracts <span class="_ _6"> </span>for <span class="_ _b"> </span>research <span class="_ _b"> </span>grant <span class="_ _6"> </span>applications </div><div class="t m0 x0 h4 yae ff2 fs1 fc0 sc0 ls3 ws0">and <span class="_ _a"> </span>publications, <span class="_ _3"> </span>with <span class="_ _a"> </span>such <span class="_ _3"> </span>translation <span class="_ _3"> </span>work <span class="_ _a"> </span>valued <span class="_ _a"> </span>as <span class="_ _a"> </span>an <span class="_ _3"> </span>integral <span class="_ _a"> </span>component <span class="_ _3"> </span>of <span class="_ _a"> </span>the </div><div class="t m0 x0 h4 yaf ff2 fs1 fc0 sc0 ls3 ws0">research <span class="_ _d"> </span>process. <span class="_ _d"> </span>Though <span class="_ _d"> </span>such <span class="_ _d"> </span>tasks <span class="_ _9"> </span>may <span class="_ _d"> </span>not <span class="_ _d"> </span>inv<span class="_ _0"></span>olv<span class="_ _0"></span>e <span class="_ _d"> </span>complex <span class="_ _9"> </span>data <span class="_ _d"> </span>structures <span class="_ _d"> </span>or </div><div class="t m0 x0 h4 yb0 ff2 fs1 fc0 sc0 ls3 ws0">data <span class="_ _8"> </span>science, <span class="_ _7"> </span>they <span class="_ _3"> </span>demonstrate <span class="_ _7"> </span>the <span class="_ _8"> </span>need <span class="_ _7"> </span>to <span class="_ _8"> </span>learn <span class="_ _7"> </span>how <span class="_ _3"> </span>to <span class="_ _7"> </span>tell <span class="_ _8"> </span>accurate <span class="_ _7"> </span>and <span class="_ _8"> </span>engaging </div><div class="t m0 x0 h4 yb1 ff2 fs1 fc0 sc0 ls3 ws0">stories <span class="_ _8"> </span>to <span class="_ _7"> </span>those <span class="_ _8"> </span>without <span class="_ _7"> </span>expert <span class="_ _8"> </span>knowledge, <span class="_ _3"> </span>making <span class="_ _7"> </span>knowledge <span class="_ _8"> </span>interpretable. <span class="_ _8"> </span>In <span class="_ _7"> </span>the </div><div class="t m0 x0 h4 yb2 ff2 fs1 fc0 sc0 ls2 ws0">workplace, <span class="_ _d"> </span>data <span class="_ _d"> </span>translators <span class="_ _d"> </span>help <span class="_ _d"> </span>to <span class="_ _d"> </span>bridge <span class="_ _d"> </span>the <span class="_ _d"> </span>“interpretation <span class="_ _d"> </span>gap”, <span class="_ _d"> </span>providing <span class="_ _d"> </span>the </div><div class="t m0 x0 h4 yb3 ff2 fs1 fc0 sc0 ls2 ws0">insights <span class="_ _9"> </span>from <span class="_ _9"> </span>large <span class="_ _7"> </span>data <span class="_ _9"> </span>sets <span class="_ _9"> </span>to <span class="_ _9"> </span>make <span class="_ _9"> </span>this <span class="_ _9"> </span>information <span class="_ _9"> </span>actionable <span class="_ _9"> </span>to <span class="_ _9"> </span>less-technical </div><div class="t m0 x0 h4 yb4 ff2 fs1 fc0 sc0 lsf ws0">worke<span class="_ _12"></span>rs <span class="_ _1"> </span>[</div><div class="t m0 x9 h4 yb5 ff2 fs1 fc1 sc0 ls0 ws0">4</div><div class="t m0 x2 h4 yb6 ff2 fs1 fc0 sc0 ls2 ws0">]. <span class="_ _d"> </span>While <span class="_ _d"> </span>the <span class="_ _d"> </span>utility <span class="_ _1"> </span>of <span class="_ _d"> </span>data <span class="_ _d"> </span>translators <span class="_ _d"> </span>has <span class="_ _1"> </span>been <span class="_ _d"> </span>noted <span class="_ _d"> </span>in <span class="_ _d"> </span>STEM <span class="_ _1"> </span>ﬁelds </div><div class="t m0 x0 h4 yb7 ff2 fs1 fc0 sc0 ls3 ws0">such <span class="_ _9"> </span>as <span class="_ _d"> </span>sustainable <span class="_ _9"> </span>dev<span class="_ _0"></span>elopment <span class="_ _9"> </span>[</div><div class="t m0 xd h4 yb8 ff2 fs1 fc1 sc0 ls0 ws0">2</div><div class="t m0 xe h4 yb9 ff2 fs1 fc0 sc0 lsc ws0">] <span class="_ _9"> </span>and <span class="_ _d"> </span>biomedicine, <span class="_ _9"> </span>much <span class="_ _9"> </span>of <span class="_ _d"> </span>the <span class="_ _9"> </span>focus <span class="_ _d"> </span>on <span class="_ _9"> </span>data </div><div class="t m0 x0 h4 yba ff2 fs1 fc0 sc0 ls2 ws0">translation <span class="_ _6"> </span>in <span class="_ _a"> </span>academic <span class="_ _a"> </span>disciplines <span class="_ _6"> </span>is <span class="_ _a"> </span>on <span class="_ _a"> </span>translating <span class="_ _6"> </span>data <span class="_ _a"> </span>in <span class="_ _a"> </span>underlying <span class="_ _6"> </span>models <span class="_ _a"> </span>rather </div><div class="t m0 x0 h4 ybb ff2 fs1 fc0 sc0 ls2 ws0">than <span class="_ _3"> </span>on <span class="_ _3"> </span>the <span class="_ _3"> </span>training <span class="_ _3"> </span>of <span class="_ _3"> </span>indi<span class="_ _0"></span>viduals <span class="_ _3"> </span>to <span class="_ _3"> </span>be <span class="_ _3"> </span>data <span class="_ _3"> </span>translators <span class="_ _3"> </span>[</div><div class="t m0 xf h4 y8c ff2 fs1 fc1 sc0 ls0 ws0">3<span class="fc0 lsb">]. </span></div><div class="t m0 x1 h4 ybc ff2 fs1 fc0 sc0 ls3 ws0">In <span class="_ _9"> </span>this <span class="_ _9"> </span>collection, <span class="_ _9"> </span>we <span class="_ _9"> </span>have <span class="_ _7"> </span>shared <span class="_ _9"> </span>a <span class="_ _9"> </span>number <span class="_ _9"> </span>of <span class="_ _9"> </span>data <span class="_ _9"> </span>science <span class="_ _9"> </span>stories <span class="_ _d"> </span>to <span class="_ _7"> </span>describe </div><div class="t m0 x0 h4 ybd ff2 fs1 fc0 sc0 ls3 ws0">early <span class="_ _11"> </span>approaches <span class="_ _11"> </span>to <span class="_ _11"> </span>the <span class="_ _11"> </span>pedagogy <span class="_ _11"> </span>of <span class="_ _11"> </span>data <span class="_ _11"> </span>translation. <span class="_ _11"> </span>Many <span class="_ _11"> </span>other <span class="_ _11"> </span>stories <span class="_ _11"> </span>exist </div><div class="t m0 x0 h4 ybe ff2 fs1 fc0 sc0 ls3 ws0">across <span class="_ _6"> </span>a <span class="_ _6"> </span>multitude <span class="_ _a"> </span>of <span class="_ _6"> </span>disciplines <span class="_ _a"> </span>and <span class="_ _6"> </span>ﬁelds, <span class="_ _a"> </span>stories <span class="_ _6"> </span>of <span class="_ _a"> </span>instruction <span class="_ _6"> </span>undertaken <span class="_ _6"> </span>perhaps </div><div class="t m0 x0 h4 ybf ff2 fs1 fc0 sc0 ls2 ws0">tentativ<span class="_ _0"></span>ely <span class="_ _8"> </span>at <span class="_ _7"> </span>ﬁrst, <span class="_ _7"> </span>but <span class="_ _7"> </span>then <span class="_ _7"> </span>with <span class="_ _7"> </span>increasing <span class="_ _7"> </span>conﬁdence. <span class="_ _7"> </span>These <span class="_ _7"> </span>s tories <span class="_ _9"> </span>may <span class="_ _7"> </span>provide </div><div class="t m0 x0 h4 yc0 ff2 fs1 fc0 sc0 ls3 ws0">models <span class="_ _d"> </span>for <span class="_ _9"> </span>future <span class="_ _d"> </span>instruction. <span class="_ _d"> </span>By <span class="_ _d"> </span>bringing <span class="_ _d"> </span>together <span class="_ _d"> </span>e<span class="_ _0"></span>xperts <span class="_ _d"> </span>who <span class="_ _d"> </span>can <span class="_ _9"> </span>demonstrate </div><div class="t m0 x0 h4 yc1 ff2 fs1 fc0 sc0 ls3 ws0">ho<span class="_ _0"></span>w <span class="_ _9"> </span>such <span class="_ _d"> </span>instruction <span class="_ _9"> </span>is <span class="_ _9"> </span>possible, <span class="_ _d"> </span>we <span class="_ _9"> </span>hope <span class="_ _d"> </span>to <span class="_ _9"> </span>encourage <span class="_ _9"> </span>other <span class="_ _d"> </span>instructors <span class="_ _9"> </span>to <span class="_ _9"> </span>share </div><div class="t m0 x0 h4 yc2 ff2 fs1 fc0 sc0 ls3 ws0">their <span class="_ _a"> </span>approaches, <span class="_ _3"> </span>with <span class="_ _3"> </span>the <span class="_ _a"> </span>goal <span class="_ _3"> </span>of <span class="_ _3"> </span>creating <span class="_ _3"> </span>a <span class="_ _a"> </span>robust <span class="_ _a"> </span>and <span class="_ _3"> </span>ﬂexible <span class="_ _a"> </span>pedagogy <span class="_ _3"> </span>for <span class="_ _a"> </span>future </div><div class="t m0 x0 h4 yc3 ff2 fs1 fc0 sc0 ls0 ws0">data <span class="_ _3"> </span>translators. </div><div class="t m0 x0 h7 yc4 ff1 fs4 fc0 sc0 ls10 ws0">References </div><div class="t m0 x0 h5 yc5 ff2 fs2 fc0 sc0 ls9 ws0">1. <span class="_ _13"> </span><span class="ls0">Ariker<span class="_ _0"></span>, <span class="_ _13"> </span>M., <span class="_ _13"> </span>Breuer, <span class="_ _13"> </span>P<span class="_ _2"></span>., <span class="_ _14"> </span>McGuire, <span class="_ _13"> </span>T<span class="_ _4"></span>.: <span class="_ _14"> </span>How <span class="_ _13"> </span>to <span class="_ _13"> </span>get <span class="_ _13"> </span>the <span class="_ _13"> </span>most <span class="_ _14"> </span>from <span class="_ _13"> </span>big <span class="_ _14"> </span>data. <span class="_ _13"> </span>McKinsey </span></div><div class="t m0 x1 h5 yc6 ff2 fs2 fc0 sc0 ls7 ws0">Inst. <span class="_ _6"> </span>(2014). </div><div class="t m0 x10 h5 yc7 ff2 fs2 fc1 sc0 ls0 ws0">https://www<span class="_ _4"></span>.mckinsey<span class="_ _4"></span>.com/capabilities/mckinsey-digital/our-insights/ho<span class="_ _0"></span>w-to-get-</div><div class="t m0 x1 h5 yc8 ff2 fs2 fc1 sc0 ls5 ws0">the-most-from-big-data </div><div class="t m0 x0 h5 yc9 ff2 fs2 fc0 sc0 ls9 ws0">2. <span class="_ _13"> </span><span class="ls8">Auad, <span class="_ _6"> </span>G., <span class="_ _6"> </span>Fath, <span class="_ _6"> </span>B.D.: <span class="_ _6"> </span>T<span class="_ _4"></span>owards <span class="_ _6"> </span>a <span class="_ _6"> </span>ﬂourishing <span class="_ _6"> </span>blue <span class="_ _6"> </span>economy: <span class="_ _a"> </span>Identifying <span class="_ _6"> </span>obstacles <span class="_ _6"> </span>and <span class="_ _6"> </span>pathways </span></div><div class="t m0 x1 h8 yca ff2 fs2 fc0 sc0 ls0 ws0">for <span class="_ _6"> </span>its <span class="_ _a"> </span>sustainable <span class="_ _6"> </span>development. <span class="_ _6"> </span>Curr<span class="_ _0"></span>. <span class="_ _6"> </span>Res. <span class="_ _6"> </span>Environ. <span class="_ _6"> </span>Sustain. <span class="_ _6"> </span><span class="ff1">4</span><span class="ls9">, <span class="_ _6"> </span>100193 <span class="_ _a"> </span>(2022) </span></div><div class="t m0 x0 h5 ycb ff2 fs2 fc0 sc0 ls9 ws0">3. <span class="_ _13"> </span><span class="ls0">Biomedical <span class="_ _b"> </span>Data <span class="_ _b"> </span>Translator <span class="_ _b"> </span>Consortium: <span class="_ _b"> </span>The <span class="_ _b"> </span>Biomedical <span class="_ _6"> </span>Data <span class="_ _b"> </span>Translator <span class="_ _10"> </span>program: <span class="_ _6"> </span>conception, </span></div><div class="t m0 x1 h8 ycc ff2 fs2 fc0 sc0 ls0 ws0">culture, <span class="_ _6"> </span>and <span class="_ _a"> </span>community<span class="_ _4"></span>. <span class="_ _a"> </span>Clin. <span class="_ _a"> </span>T<span class="_ _0"></span>ransl. <span class="_ _6"> </span>Sci. <span class="_ _a"> </span><span class="ff1 ls9">12</span><span class="ls11">(2), <span class="_ _a"> </span>91 <span class="_ _6"> </span>(2019)</span></div><a class="l" href="#pf6" data-dest-detail='[6,"XYZ",53,527,null]'><div class="d m1" style="border-style:none;position:absolute;left:295.650000px;bottom:551.553000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf6" data-dest-detail='[6,"XYZ",53,487,null]'><div class="d m1" style="border-style:none;position:absolute;left:261.522000px;bottom:503.736000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf6" data-dest-detail='[6,"XYZ",53,577,null]'><div class="d m1" style="border-style:none;position:absolute;left:324.612000px;bottom:491.784000px;width:4.981000px;height:6.805000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf6" data-dest-detail='[6,"XYZ",53,607,null]'><div class="d m1" style="border-style:none;position:absolute;left:92.538000px;bottom:360.276000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf5" data-dest-detail='[5,"XYZ",53,135,null]'><div class="d m1" style="border-style:none;position:absolute;left:192.546000px;bottom:348.315000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="#pf5" data-dest-detail='[5,"XYZ",53,115,null]'><div class="d m1" style="border-style:none;position:absolute;left:279.684000px;bottom:324.411000px;width:4.981000px;height:6.595000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/how-to-get-the-most-from-big-data"><div class="d m1" style="border-style:none;position:absolute;left:108.459000px;bottom:147.226000px;width:276.767000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/how-to-get-the-most-from-big-data"><div class="d m1" style="border-style:none;position:absolute;left:64.908000px;bottom:137.263000px;width:79.491000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+<div id="pf6" class="pf w0 h0" data-page-no="6"><div class="pc pc6 w0 h0"><div class="t m0 x0 h5 y27 ff2 fs2 fc0 sc0 ls0 ws0">190<span class="_ _c"> </span>B.<span class="_ _6"> </span>Samuels<span class="_ _a"> </span>et<span class="_ _6"> </span>al.</div><div class="t m0 x0 h5 y28 ff2 fs2 fc0 sc0 ls9 ws0">4. <span class="_ _13"> </span><span class="ls5">Brady<span class="_ _4"></span>, <span class="_ _9"> </span>C. <span class="_ _9"> </span>Forde, <span class="_ _7"> </span>M., <span class="_ _9"> </span>Chadwick, <span class="_ _9"> </span>S.: <span class="_ _9"> </span>Why <span class="_ _9"> </span>your <span class="_ _9"> </span>company <span class="_ _9"> </span>needs <span class="_ _9"> </span>data <span class="_ _9"> </span>translators. <span class="_ _9"> </span>MIT <span class="_ _9"> </span>Sloan </span></div><div class="t m0 x1 h5 ycd ff2 fs2 fc0 sc0 ls8 ws0">Manag. <span class="_ _8"> </span>Revie<span class="_ _0"></span>w<span class="_ _4"></span>. <span class="_ _7"> </span>(2016). </div><div class="t m0 x11 h5 yce ff2 fs2 fc1 sc0 ls5 ws0">https://sloanrevie<span class="_ _0"></span>w<span class="_ _4"></span>.mit.edu/article/why-your-compan<span class="_ _0"></span>y-needs-data-tra </div><div class="t m0 x1 h5 ycf ff2 fs2 fc1 sc0 ls0 ws0">nslators/ </div><div class="t m0 x0 h5 yd0 ff2 fs2 fc0 sc0 ls9 ws0">5. <span class="_ _13"> </span><span class="ls5">Fisher<span class="_ _0"></span>, <span class="_ _6"> </span>A.: <span class="_ _6"> </span>Now <span class="_ _6"> </span>hiring: <span class="_ _a"> </span>People <span class="_ _6"> </span>who <span class="_ _a"> </span>can <span class="_ _6"> </span>translate <span class="_ _a"> </span>data <span class="_ _6"> </span>into <span class="_ _a"> </span>stories <span class="_ _6"> </span>and <span class="_ _6"> </span>actions. <span class="_ _a"> </span>Fortune. <span class="_ _6"> </span>(2019). </span></div><div class="t m0 x1 h5 yd1 ff2 fs2 fc1 sc0 ls0 ws0">https://fortune.com/2019/10/12/human-intelligence-data-translation/ </div><div class="t m0 x0 h5 yd2 ff2 fs2 fc0 sc0 ls9 ws0">6. <span class="_ _13"> </span><span class="ls0">Henke, <span class="_ _6"> </span>N., <span class="_ _6"> </span>Levine, <span class="_ _6"> </span>J., <span class="_ _a"> </span>McInerney<span class="_ _4"></span>, <span class="_ _6"> </span>P<span class="_ _4"></span>.: <span class="_ _6"> </span>Y<span class="_ _4"></span>ou <span class="_ _6"> </span>don’t <span class="_ _6"> </span>hav<span class="_ _0"></span>e <span class="_ _6"> </span>to <span class="_ _a"> </span>be <span class="_ _6"> </span>a <span class="_ _a"> </span>data <span class="_ _6"> </span>scientist <span class="_ _a"> </span>to <span class="_ _6"> </span>ﬁll <span class="_ _a"> </span>this <span class="_ _6"> </span>must-have </span></div><div class="t m0 x1 h5 yd3 ff2 fs2 fc0 sc0 ls5 ws0">analytics <span class="_ _a"> </span>role. <span class="_ _a"> </span>Harv<span class="_ _0"></span>. <span class="_ _6"> </span>Bus. <span class="_ _3"> </span>Revie<span class="_ _0"></span>w<span class="_ _4"></span>. <span class="_ _a"> </span>(2018). </div><div class="t m0 x12 h5 yd4 ff2 fs2 fc1 sc0 ls8 ws0">https://hbr<span class="_ _4"></span>.org/2018/02/you-dont-have-to-be-a-data-</div><div class="t m0 x1 h5 yd5 ff2 fs2 fc1 sc0 ls0 ws0">scientist-to-ﬁll-this-must-hav<span class="_ _0"></span>e-analytics-role </div><div class="t m0 x0 h5 yd6 ff2 fs2 fc0 sc0 ls9 ws0">7. <span class="_ _13"> </span><span class="ls5">Kenne<span class="_ _0"></span>y<span class="_ _4"></span>, <span class="_ _6"> </span>A.: <span class="_ _a"> </span>6 <span class="_ _6"> </span>steps <span class="_ _6"> </span>to <span class="_ _6"> </span>become <span class="_ _a"> </span>a <span class="_ _6"> </span>ﬁnance <span class="_ _6"> </span>data <span class="_ _6"> </span>‘translator’. <span class="_ _a"> </span>Financ. <span class="_ _6"> </span>Management. <span class="_ _6"> </span>(2021). <span class="_ _a"> </span><span class="fc1 ls6">https:// </span></span></div><div class="t m0 x1 h5 yd7 ff2 fs2 fc1 sc0 ls5 ws0">www<span class="_ _4"></span>.fm-magazine.com/news/2021/oct/6-steps-become-ﬁnance-data-translator<span class="_ _4"></span>.html </div><div class="t m0 x0 h5 yd8 ff2 fs2 fc0 sc0 ls9 ws0">8. <span class="_ _13"> </span><span class="ls0">Lav<span class="_ _0"></span>e, <span class="_ _6"> </span>J., <span class="_ _a"> </span>W<span class="_ _4"></span>enger<span class="_ _0"></span>, <span class="_ _6"> </span>E.: <span class="_ _a"> </span>Situated <span class="_ _a"> </span>learning: <span class="_ _6"> </span>legitimate <span class="_ _6"> </span>peripheral <span class="_ _a"> </span>participation. <span class="_ _6"> </span>Camb. <span class="_ _6"> </span>Univ<span class="_ _4"></span>. <span class="_ _6"> </span>Press., </span></div><div class="t m0 x1 h5 yd9 ff2 fs2 fc0 sc0 ls8 ws0">Cambridge, <span class="_ _6"> </span>UK <span class="_ _a"> </span>(1991) </div><div class="t m0 x0 h8 yaa ff2 fs2 fc0 sc0 ls9 ws0">9. <span class="_ _13"> </span><span class="ls5">Maynard-Atem, <span class="_ _6"> </span>L., <span class="_ _a"> </span>Ludford, <span class="_ _a"> </span>B.: <span class="_ _6"> </span>The <span class="_ _a"> </span>rise <span class="_ _6"> </span>of <span class="_ _a"> </span>the <span class="_ _a"> </span>data <span class="_ _6"> </span>translator<span class="_ _0"></span>. <span class="_ _6"> </span>Impact <span class="_ _3"> </span><span class="ff1 ls0">1<span class="_ _0"></span><span class="ff2 ls9">, <span class="_ _6"> </span>12–14 <span class="_ _a"> </span>(2020)</span></span></span></div><a class="l" href="https://sloanreview.mit.edu/article/why-your-company-needs-data-translators/"><div class="d m1" style="border-style:none;position:absolute;left:150.885000px;bottom:587.578000px;width:234.341000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://sloanreview.mit.edu/article/why-your-company-needs-data-translators/"><div class="d m1" style="border-style:none;position:absolute;left:64.908000px;bottom:579.453000px;width:28.699000px;height:5.606000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://fortune.com/2019/10/12/human-intelligence-data-translation/"><div class="d m1" style="border-style:none;position:absolute;left:64.908000px;bottom:557.689000px;width:231.217000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://hbr.org/2018/02/you-dont-have-to-be-a-data-scientist-to-fill-this-must-have-analytics-role"><div class="d m1" style="border-style:none;position:absolute;left:209.511000px;bottom:537.763000px;width:175.716000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://hbr.org/2018/02/you-dont-have-to-be-a-data-scientist-to-fill-this-must-have-analytics-role"><div class="d m1" style="border-style:none;position:absolute;left:64.908000px;bottom:527.800000px;width:151.175000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://www.fm-magazine.com/news/2021/oct/6-steps-become-finance-data-translator.html"><div class="d m1" style="border-style:none;position:absolute;left:361.692000px;bottom:517.837000px;width:23.533000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://www.fm-magazine.com/news/2021/oct/6-steps-become-finance-data-translator.html"><div class="d m1" style="border-style:none;position:absolute;left:64.908000px;bottom:507.874000px;width:284.473000px;height:7.444000px;background-color:rgba(255,255,255,0.000001);"></div></a></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+<div class="loading-indicator">
+<img alt="" src="data:image/png;base64,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"/>
+</div>
+</body>
+</html>
